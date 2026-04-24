@@ -1,0 +1,255 @@
+
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font-sans); }
+.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--color-border-tertiary); margin-bottom: 16px; overflow-x: auto; }
+.tab { padding: 8px 14px; font-size: 11px; font-weight: 500; cursor: pointer; color: var(--color-text-secondary); border-bottom: 2px solid transparent; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; }
+.tab.active { color: var(--color-text-primary); border-bottom: 2px solid var(--color-border-primary); }
+.page { display: none; }
+.page.active { display: block; }
+.lf-header { background: #D3D1C7; height: 32px; display: flex; align-items: center; padding: 0 12px; gap: 8px; border-radius: 4px 4px 0 0; margin-bottom: 2px; }
+.lf-badge { font-size: 9px; color: #5F5E5A; background: #B4B2A9; padding: 2px 6px; border-radius: 3px; }
+.lf-hero { background: #B4B2A9; border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px; gap: 6px; margin-bottom: 2px; }
+.lf-box { border: 1px dashed #888780; border-radius: 4px; padding: 8px; background: #F1EFE8; }
+.lf-img { background: #D3D1C7; border-radius: 3px; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #5F5E5A; }
+.lf-btn { border: 1.5px solid #5F5E5A; border-radius: 3px; font-size: 9px; padding: 3px 8px; color: #444441; display: inline-block; }
+.lf-btn-dark { background: #444441; border-radius: 3px; font-size: 9px; padding: 3px 10px; color: #F1EFE8; display: inline-block; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lf-label { font-size: 9px; color: #888780; margin-bottom: 3px; }
+.lf-line { height: 6px; background: #D3D1C7; border-radius: 2px; margin-bottom: 4px; }
+.lf-footer { background: #444441; padding: 12px; border-radius: 0 0 4px 4px; margin-top: 2px; }
+.section-tag { font-size: 9px; color: #888780; font-style: italic; text-align: center; margin: 4px 0; }
+.lf-nav-item { font-size: 9px; color: #5F5E5A; padding: 2px 6px; }
+.lf-nav-item.active { color: #2C2C2A; border-bottom: 1px solid #2C2C2A; }
+</style>
+
+<div class="tabs">
+  <button class="tab active" onclick="showPage(0)">Home</button>
+  <button class="tab" onclick="showPage(1)">Rackets</button>
+  <button class="tab" onclick="showPage(2)">Compare</button>
+  <button class="tab" onclick="showPage(3)">Guide</button>
+  <button class="tab" onclick="showPage(4)">Contact</button>
+</div>
+
+<div style="font-size:10px; color:var(--color-text-tertiary); margin-bottom:10px; padding: 4px 8px; border: 1px dashed var(--color-border-tertiary); border-radius:4px; display:inline-block;">Low-fidelity wireframes · structural layout only</div>
+
+<div class="page active" id="p0">
+  <div class="lf-header">
+    <div class="lf-badge">Logo</div>
+    <div style="flex:1; display:flex; justify-content:center; gap:12px;">
+      <span class="lf-nav-item active">Shop</span><span class="lf-nav-item">Compare</span><span class="lf-nav-item">Guide</span><span class="lf-nav-item">Contact</span>
+    </div>
+    <div class="lf-badge">⌕</div><div class="lf-badge">◉</div>
+  </div>
+  <div class="lf-hero">
+    <div class="lf-label">Full-width hero image placeholder</div>
+    <div style="font-size:13px; font-weight:500; color:#2C2C2A;">[Headline text]</div>
+    <div style="font-size:9px; color:#5F5E5A;">[Sub-headline copy]</div>
+    <div class="lf-btn-dark">Shop Rackets</div>
+  </div>
+  <div class="section-tag">— Featured Rackets —</div>
+  <div class="g4" style="margin-bottom:8px;">
+    <div class="lf-box"><div class="lf-img" style="height:40px; margin-bottom:4px;">img</div><div class="lf-line" style="width:70%;"></div><div class="lf-line" style="width:40%;"></div><div class="lf-btn" style="margin-top:4px;">Add to cart</div></div>
+    <div class="lf-box"><div class="lf-img" style="height:40px; margin-bottom:4px;">img</div><div class="lf-line" style="width:70%;"></div><div class="lf-line" style="width:40%;"></div><div class="lf-btn" style="margin-top:4px;">Add to cart</div></div>
+    <div class="lf-box"><div class="lf-img" style="height:40px; margin-bottom:4px;">img</div><div class="lf-line" style="width:70%;"></div><div class="lf-line" style="width:40%;"></div><div class="lf-btn" style="margin-top:4px;">Add to cart</div></div>
+    <div class="lf-box"><div class="lf-img" style="height:40px; margin-bottom:4px;">img</div><div class="lf-line" style="width:70%;"></div><div class="lf-line" style="width:40%;"></div><div class="lf-btn" style="margin-top:4px;">Add to cart</div></div>
+  </div>
+  <div class="section-tag">— Why ACE Gear —</div>
+  <div class="g3" style="margin-bottom:8px;">
+    <div class="lf-box" style="text-align:center;"><div class="lf-img" style="height:24px; width:24px; border-radius:50%; margin:0 auto 4px;">◎</div><div class="lf-line" style="width:80%; margin:0 auto 3px;"></div><div class="lf-line" style="width:90%; margin:0 auto;"></div></div>
+    <div class="lf-box" style="text-align:center;"><div class="lf-img" style="height:24px; width:24px; border-radius:50%; margin:0 auto 4px;">◎</div><div class="lf-line" style="width:80%; margin:0 auto 3px;"></div><div class="lf-line" style="width:90%; margin:0 auto;"></div></div>
+    <div class="lf-box" style="text-align:center;"><div class="lf-img" style="height:24px; width:24px; border-radius:50%; margin:0 auto 4px;">◎</div><div class="lf-line" style="width:80%; margin:0 auto 3px;"></div><div class="lf-line" style="width:90%; margin:0 auto;"></div></div>
+  </div>
+  <div class="section-tag">— Testimonials —</div>
+  <div class="lf-box" style="text-align:center; margin-bottom:8px; padding:12px;"><div class="lf-line" style="width:80%; margin:0 auto 4px;"></div><div class="lf-line" style="width:60%; margin:0 auto 4px;"></div><div class="lf-line" style="width:30%; margin:0 auto;"></div></div>
+  <div class="lf-footer"><div class="g4"><div><div class="lf-line" style="background:#888780; width:50%; margin-bottom:6px;"></div><div class="lf-line" style="background:#5F5E5A;"></div><div class="lf-line" style="background:#5F5E5A;"></div></div><div><div class="lf-line" style="background:#888780; width:50%; margin-bottom:6px;"></div><div class="lf-line" style="background:#5F5E5A;"></div><div class="lf-line" style="background:#5F5E5A;"></div></div><div><div class="lf-line" style="background:#888780; width:50%; margin-bottom:6px;"></div><div class="lf-line" style="background:#5F5E5A;"></div><div class="lf-line" style="background:#5F5E5A;"></div></div><div><div class="lf-line" style="background:#888780; width:50%; margin-bottom:6px;"></div><div class="lf-line" style="background:#5F5E5A;"></div></div></div></div>
+</div>
+
+<div class="page" id="p1">
+  <div class="lf-header">
+    <div class="lf-badge">Logo</div>
+    <div style="flex:1; display:flex; justify-content:center; gap:12px;"><span class="lf-nav-item active">Shop</span><span class="lf-nav-item">Compare</span><span class="lf-nav-item">Guide</span><span class="lf-nav-item">Contact</span></div>
+    <div class="lf-badge">⌕</div><div class="lf-badge">◉</div>
+  </div>
+  <div style="background:#D3D1C7; padding:6px 10px; margin-bottom:6px; display:flex; align-items:center; gap:4px;">
+    <span style="font-size:9px; color:#5F5E5A;">Home</span><span style="font-size:9px; color:#888780;">›</span><span style="font-size:9px; color:#2C2C2A;">Rackets</span>
+  </div>
+  <div class="g2" style="margin-bottom:8px;">
+    <div>
+      <div class="lf-box" style="margin-bottom:6px; padding:10px;">
+        <div class="lf-label">Filter by level</div>
+        <div style="display:flex; flex-direction:column; gap:3px;">
+          <label style="font-size:9px; color:#444441; display:flex; align-items:center; gap:4px;"><input type="checkbox" style="width:10px; height:10px;"> Beginner</label>
+          <label style="font-size:9px; color:#444441; display:flex; align-items:center; gap:4px;"><input type="checkbox" style="width:10px; height:10px;"> Intermediate</label>
+          <label style="font-size:9px; color:#444441; display:flex; align-items:center; gap:4px;"><input type="checkbox" style="width:10px; height:10px;"> Professional</label>
+        </div>
+        <div class="lf-label" style="margin-top:8px;">Price range</div>
+        <div class="lf-line"></div>
+        <div class="lf-label" style="margin-top:6px;">Brand</div>
+        <div class="lf-line"></div><div class="lf-line" style="width:70%;"></div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+        <div style="font-size:9px; color:#5F5E5A;">Showing 12 rackets</div>
+        <select style="font-size:9px; padding:2px 4px; border:1px dashed #888780; border-radius:3px; background:#F1EFE8; color:#444441;"><option>Sort: Featured</option></select>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:5px;">
+        <div class="lf-box"><div class="lf-img" style="height:35px; margin-bottom:3px;">img</div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:40%;"></div><div style="font-size:8px; color:#888780;">300g · Pro</div><div class="lf-btn" style="margin-top:3px; font-size:8px;">View</div></div>
+        <div class="lf-box"><div class="lf-img" style="height:35px; margin-bottom:3px;">img</div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:40%;"></div><div style="font-size:8px; color:#888780;">285g · Pro</div><div class="lf-btn" style="margin-top:3px; font-size:8px;">View</div></div>
+        <div class="lf-box"><div class="lf-img" style="height:35px; margin-bottom:3px;">img</div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:40%;"></div><div style="font-size:8px; color:#888780;">270g · Mid</div><div class="lf-btn" style="margin-top:3px; font-size:8px;">View</div></div>
+        <div class="lf-box"><div class="lf-img" style="height:35px; margin-bottom:3px;">img</div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:40%;"></div><div style="font-size:8px; color:#888780;">260g · Beg</div><div class="lf-btn" style="margin-top:3px; font-size:8px;">View</div></div>
+        <div class="lf-box"><div class="lf-img" style="height:35px; margin-bottom:3px;">img</div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:40%;"></div><div style="font-size:8px; color:#888780;">295g · Pro</div><div class="lf-btn" style="margin-top:3px; font-size:8px;">View</div></div>
+        <div class="lf-box"><div class="lf-img" style="height:35px; margin-bottom:3px;">img</div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:40%;"></div><div style="font-size:8px; color:#888780;">255g · Beg</div><div class="lf-btn" style="margin-top:3px; font-size:8px;">View</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="section-tag">— Racket detail popup (product page) —</div>
+  <div class="lf-box">
+    <div class="g2">
+      <div class="lf-img" style="height:80px;">Large racket image</div>
+      <div>
+        <div class="lf-line" style="width:80%;"></div>
+        <div class="lf-line" style="width:40%;"></div>
+        <div style="font-size:9px; color:#888780; margin-bottom:4px;">Specifications table</div>
+        <div class="lf-line" style="width:90%;"></div><div class="lf-line" style="width:75%;"></div><div class="lf-line" style="width:60%;"></div>
+        <div style="display:flex; gap:4px; margin-top:6px;"><div class="lf-btn-dark">Add to cart</div><div class="lf-btn">Compare</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="lf-footer" style="margin-top:8px;"><div class="lf-line" style="background:#888780; width:30%;"></div></div>
+</div>
+
+<div class="page" id="p2">
+  <div class="lf-header">
+    <div class="lf-badge">Logo</div>
+    <div style="flex:1; display:flex; justify-content:center; gap:12px;"><span class="lf-nav-item">Shop</span><span class="lf-nav-item active">Compare</span><span class="lf-nav-item">Guide</span><span class="lf-nav-item">Contact</span></div>
+    <div class="lf-badge">⌕</div><div class="lf-badge">◉</div>
+  </div>
+  <div style="text-align:center; padding:10px 0 4px;">
+    <div class="lf-line" style="width:30%; margin:0 auto 4px;"></div>
+    <div style="font-size:9px; color:#888780;">Select up to 3 rackets to compare side-by-side</div>
+  </div>
+  <div class="g3" style="margin-bottom:8px;">
+    <div class="lf-box" style="text-align:center; border-style:dashed;"><div class="lf-img" style="height:50px; margin-bottom:4px;">+ Select racket</div><div class="lf-line" style="width:60%; margin:0 auto;"></div></div>
+    <div class="lf-box" style="text-align:center; border-style:dashed;"><div class="lf-img" style="height:50px; margin-bottom:4px;">+ Select racket</div><div class="lf-line" style="width:60%; margin:0 auto;"></div></div>
+    <div class="lf-box" style="text-align:center; border-style:dashed;"><div class="lf-img" style="height:50px; margin-bottom:4px;">+ Select racket</div><div class="lf-line" style="width:60%; margin:0 auto;"></div></div>
+  </div>
+  <div class="section-tag">— Comparison results table —</div>
+  <div class="lf-box" style="margin-bottom:6px;">
+    <div style="display:grid; grid-template-columns:120px 1fr 1fr 1fr; gap:1px; font-size:9px;">
+      <div style="padding:4px; background:#D3D1C7; color:#444441;">Attribute</div>
+      <div style="padding:4px; background:#D3D1C7; color:#444441; text-align:center;">Racket A</div>
+      <div style="padding:4px; background:#D3D1C7; color:#444441; text-align:center;">Racket B</div>
+      <div style="padding:4px; background:#D3D1C7; color:#444441; text-align:center;">Racket C</div>
+      <div style="padding:4px; color:#5F5E5A; background:#F1EFE8;">Weight</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div>
+      <div style="padding:4px; color:#5F5E5A;">Power</div><div style="padding:4px; text-align:center;">—</div><div style="padding:4px; text-align:center;">—</div><div style="padding:4px; text-align:center;">—</div>
+      <div style="padding:4px; color:#5F5E5A; background:#F1EFE8;">Control</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div>
+      <div style="padding:4px; color:#5F5E5A;">Material</div><div style="padding:4px; text-align:center;">—</div><div style="padding:4px; text-align:center;">—</div><div style="padding:4px; text-align:center;">—</div>
+      <div style="padding:4px; color:#5F5E5A; background:#F1EFE8;">Head size</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div><div style="padding:4px; text-align:center; background:#F1EFE8;">—</div>
+    </div>
+  </div>
+  <div class="section-tag">— Best match recommendation —</div>
+  <div class="lf-box" style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+    <div class="lf-img" style="height:40px; width:40px; border-radius:50%; flex-shrink:0;">★</div>
+    <div><div class="lf-line" style="width:120px; margin-bottom:3px;"></div><div class="lf-line" style="width:80px;"></div></div>
+    <div class="lf-btn-dark" style="margin-left:auto;">Buy now</div>
+  </div>
+  <div class="lf-footer"><div class="lf-line" style="background:#888780; width:30%;"></div></div>
+</div>
+
+<div class="page" id="p3">
+  <div class="lf-header">
+    <div class="lf-badge">Logo</div>
+    <div style="flex:1; display:flex; justify-content:center; gap:12px;"><span class="lf-nav-item">Shop</span><span class="lf-nav-item">Compare</span><span class="lf-nav-item active">Guide</span><span class="lf-nav-item">Contact</span></div>
+    <div class="lf-badge">⌕</div><div class="lf-badge">◉</div>
+  </div>
+  <div style="background:#D3D1C7; padding:16px; text-align:center; margin-bottom:8px;">
+    <div class="lf-line" style="width:40%; margin:0 auto 4px;"></div>
+    <div class="lf-line" style="width:60%; margin:0 auto;"></div>
+  </div>
+  <div class="g2" style="margin-bottom:8px; align-items:start;">
+    <div style="border:1px dashed #B4B2A9; border-radius:4px; padding:6px;">
+      <div class="lf-label">Contents</div>
+      <div style="font-size:9px; color:#5F5E5A; line-height:2.2;">How to choose a racket<br>Grip size guide<br>Weight &amp; balance guide<br>Tips for players</div>
+    </div>
+    <div>
+      <div class="lf-box" style="margin-bottom:6px;">
+        <div class="lf-label">How to choose a racket</div>
+        <div class="lf-line"></div><div class="lf-line" style="width:90%;"></div><div class="lf-line" style="width:80%;"></div>
+        <div class="lf-img" style="height:40px; margin:6px 0;">diagram placeholder</div>
+        <div class="lf-line"></div><div class="lf-line" style="width:70%;"></div>
+      </div>
+      <div class="lf-box" style="margin-bottom:6px;">
+        <div class="lf-label">Grip size guide</div>
+        <div class="g2"><div class="lf-img" style="height:36px;">chart</div><div><div class="lf-line"></div><div class="lf-line" style="width:80%;"></div><div class="lf-line" style="width:60%;"></div></div></div>
+      </div>
+      <div class="lf-box" style="margin-bottom:6px;">
+        <div class="lf-label">Weight &amp; balance guide</div>
+        <div class="lf-line"></div><div class="lf-line" style="width:85%;"></div>
+      </div>
+      <div class="lf-box">
+        <div class="lf-label">Tips for players</div>
+        <div class="lf-line"></div><div class="lf-line" style="width:70%;"></div><div class="lf-line" style="width:90%;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="lf-footer"><div class="lf-line" style="background:#888780; width:30%;"></div></div>
+</div>
+
+<div class="page" id="p4">
+  <div class="lf-header">
+    <div class="lf-badge">Logo</div>
+    <div style="flex:1; display:flex; justify-content:center; gap:12px;"><span class="lf-nav-item">Shop</span><span class="lf-nav-item">Compare</span><span class="lf-nav-item">Guide</span><span class="lf-nav-item active">Contact</span></div>
+    <div class="lf-badge">⌕</div><div class="lf-badge">◉</div>
+  </div>
+  <div style="background:#D3D1C7; padding:16px; text-align:center; margin-bottom:8px;">
+    <div class="lf-line" style="width:30%; margin:0 auto 4px;"></div>
+    <div class="lf-line" style="width:50%; margin:0 auto;"></div>
+  </div>
+  <div class="g2" style="margin-bottom:8px; align-items:start;">
+    <div class="lf-box">
+      <div class="lf-label">Contact form</div>
+      <div class="lf-label" style="margin-top:6px;">Name</div>
+      <div style="border:1px solid #B4B2A9; height:20px; border-radius:3px; margin-bottom:6px; background:#fff;"></div>
+      <div class="lf-label">Email</div>
+      <div style="border:1px solid #B4B2A9; height:20px; border-radius:3px; margin-bottom:6px; background:#fff;"></div>
+      <div class="lf-label">Subject</div>
+      <div style="border:1px solid #B4B2A9; height:20px; border-radius:3px; margin-bottom:6px; background:#fff;"></div>
+      <div class="lf-label">Message</div>
+      <div style="border:1px solid #B4B2A9; height:50px; border-radius:3px; margin-bottom:8px; background:#fff;"></div>
+      <div class="lf-btn-dark" style="width:100%; text-align:center; display:block;">Send message</div>
+    </div>
+    <div>
+      <div class="lf-box" style="margin-bottom:6px;">
+        <div class="lf-label">Contact details</div>
+        <div class="lf-line" style="width:80%;"></div>
+        <div class="lf-line" style="width:70%;"></div>
+        <div class="lf-line" style="width:60%;"></div>
+      </div>
+      <div class="lf-box" style="margin-bottom:6px;">
+        <div class="lf-label">Business hours</div>
+        <div class="lf-line" style="width:90%;"></div>
+        <div class="lf-line" style="width:75%;"></div>
+      </div>
+      <div class="lf-img" style="height:60px; border-radius:4px;">Map placeholder</div>
+    </div>
+  </div>
+  <div class="section-tag">— Thank you page (post-submit) —</div>
+  <div class="lf-box" style="text-align:center; padding:16px; margin-bottom:8px;">
+    <div class="lf-img" style="height:30px; width:30px; border-radius:50%; margin:0 auto 6px;">✓</div>
+    <div class="lf-line" style="width:50%; margin:0 auto 4px;"></div>
+    <div class="lf-line" style="width:70%; margin:0 auto 4px;"></div>
+    <div class="lf-btn" style="margin-top:6px;">Back to home</div>
+  </div>
+  <div class="lf-footer"><div class="lf-line" style="background:#888780; width:30%;"></div></div>
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach((p,i) => p.classList.toggle('active', i===n));
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===n));
+}
+</script>

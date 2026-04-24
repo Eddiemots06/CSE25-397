@@ -1,0 +1,326 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.tabs { display: flex; gap: 0; border-bottom: 2px solid #1D9E75; margin-bottom: 0; overflow-x: auto; }
+.tab { padding: 9px 16px; font-size: 11px; font-weight: 500; cursor: pointer; color: var(--color-text-secondary); border-bottom: 3px solid transparent; margin-bottom: -2px; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; }
+.tab.active { color: #0F6E56; border-bottom: 3px solid #1D9E75; }
+.page { display: none; }
+.page.active { display: block; }
+
+.hdr { background: #2C2C2A; height: 38px; display: flex; align-items: center; padding: 0 14px; gap: 8px; }
+.logo { font-size: 13px; font-weight: 500; color: #1D9E75; letter-spacing: 0.06em; }
+.nav-link { font-size: 10px; color: #B4B2A9; padding: 4px 8px; }
+.nav-link.on { color: #5DCAA5; border-bottom: 1.5px solid #5DCAA5; }
+.hdr-icon { width: 22px; height: 22px; border: 1px solid #5F5E5A; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #B4B2A9; }
+
+.hero { background: #2C2C2A; padding: 28px 20px; text-align: center; position: relative; }
+.hero-tag { font-size: 9px; color: #5DCAA5; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.hero-h { font-size: 22px; font-weight: 500; color: #F1EFE8; margin-bottom: 6px; }
+.hero-sub { font-size: 11px; color: #888780; margin-bottom: 14px; line-height: 1.5; }
+.btn-green { background: #1D9E75; color: #E1F5EE; font-size: 10px; font-weight: 500; padding: 7px 16px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; }
+.btn-outline { border: 1px solid #1D9E75; color: #1D9E75; font-size: 10px; font-weight: 500; padding: 6px 14px; border-radius: 4px; background: none; cursor: pointer; display: inline-block; }
+.btn-dark { background: #2C2C2A; color: #F1EFE8; font-size: 10px; font-weight: 500; padding: 6px 14px; border-radius: 4px; border: none; cursor: pointer; display: inline-block; }
+
+.sec-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); text-align: center; margin-bottom: 4px; }
+.sec-sub { font-size: 10px; color: var(--color-text-secondary); text-align: center; margin-bottom: 12px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; }
+.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 10px; }
+.card-img { background: #E1F5EE; border-radius: 6px; height: 60px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #0F6E56; margin-bottom: 8px; }
+.price { font-size: 13px; font-weight: 500; color: #0F6E56; }
+.spec-pill { background: #E1F5EE; color: #0F6E56; font-size: 8px; padding: 2px 6px; border-radius: 10px; display: inline-block; margin: 1px; }
+.badge { font-size: 8px; padding: 2px 6px; border-radius: 10px; display: inline-block; }
+.badge-green { background: #E1F5EE; color: #085041; }
+.badge-amber { background: #FAEEDA; color: #633806; }
+.badge-gray { background: #F1EFE8; color: #444441; }
+.rating { color: #EF9F27; font-size: 10px; }
+
+.ftr { background: #2C2C2A; padding: 14px; }
+.ftr-h { font-size: 10px; font-weight: 500; color: #9FE1CB; margin-bottom: 6px; letter-spacing: 0.05em; }
+.ftr-t { font-size: 9px; color: #5F5E5A; line-height: 2; }
+.ftr-legal { font-size: 9px; color: #444441; border-top: 1px solid #3a3a38; padding-top: 8px; margin-top: 10px; display: flex; justify-content: space-between; }
+
+.crumb { background: #F1EFE8; padding: 5px 14px; font-size: 9px; color: #888780; }
+.crumb span { color: #2C2C2A; }
+
+.filter-sidebar { background: var(--color-background-secondary); border-radius: 8px; padding: 10px; }
+.filter-label { font-size: 9px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; margin-top: 8px; }
+.filter-opt { font-size: 10px; color: var(--color-text-primary); display: flex; align-items: center; gap: 5px; margin-bottom: 3px; }
+.filter-opt input { accent-color: #1D9E75; width: 11px; height: 11px; }
+
+.comp-slot { border: 1.5px dashed #5DCAA5; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 90px; color: #1D9E75; font-size: 10px; gap: 4px; background: #E1F5EE; }
+.comp-table { width: 100%; border-collapse: collapse; font-size: 10px; }
+.comp-table th { background: #2C2C2A; color: #9FE1CB; font-weight: 500; padding: 5px 8px; text-align: center; font-size: 10px; }
+.comp-table td { padding: 5px 8px; border-bottom: 0.5px solid var(--color-border-tertiary); text-align: center; color: var(--color-text-primary); }
+.comp-table td:first-child { text-align: left; color: var(--color-text-secondary); font-size: 9px; }
+.comp-table tr:nth-child(even) td { background: var(--color-background-secondary); }
+.win { color: #085041; font-weight: 500; }
+
+.guide-toc { background: var(--color-background-secondary); border-radius: 8px; padding: 10px; }
+.toc-item { font-size: 10px; color: #1D9E75; padding: 5px 0; border-bottom: 0.5px solid var(--color-border-tertiary); cursor: pointer; }
+.toc-item:last-child { border-bottom: none; }
+.guide-section { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: 8px; padding: 12px; margin-bottom: 8px; }
+.guide-section-title { font-size: 12px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; padding-left: 8px; border-left: 3px solid #1D9E75; }
+.guide-body { font-size: 10px; color: var(--color-text-secondary); line-height: 1.7; }
+.tip-box { background: #E1F5EE; border-radius: 6px; padding: 8px 10px; margin-top: 6px; font-size: 10px; color: #085041; }
+
+.form-group { margin-bottom: 8px; }
+.form-label { font-size: 10px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; display: block; }
+.form-input { width: 100%; border: 0.5px solid var(--color-border-secondary); border-radius: 5px; padding: 6px 10px; font-size: 10px; color: var(--color-text-primary); background: var(--color-background-primary); }
+.form-textarea { width: 100%; border: 0.5px solid var(--color-border-secondary); border-radius: 5px; padding: 6px 10px; font-size: 10px; color: var(--color-text-primary); background: var(--color-background-primary); resize: none; height: 60px; }
+.contact-info-row { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 10px; color: var(--color-text-secondary); }
+.ci-icon { width: 20px; height: 20px; border-radius: 50%; background: #E1F5EE; display: flex; align-items: center; justify-content: center; font-size: 9px; color: #085041; flex-shrink: 0; }
+.thankyou { text-align: center; padding: 24px; }
+.ty-circle { width: 44px; height: 44px; border-radius: 50%; background: #1D9E75; color: #E1F5EE; display: flex; align-items: center; justify-content: center; font-size: 18px; margin: 0 auto 10px; }
+</style>
+
+<div class="tabs">
+  <button class="tab active" onclick="showPage(0)">Home</button>
+  <button class="tab" onclick="showPage(1)">Rackets</button>
+  <button class="tab" onclick="showPage(2)">Compare</button>
+  <button class="tab" onclick="showPage(3)">Guide</button>
+  <button class="tab" onclick="showPage(4)">Contact</button>
+</div>
+
+<div style="font-size:10px; color:#085041; background:#E1F5EE; padding:4px 10px; display:flex; align-items:center; gap:6px; border-bottom: 0.5px solid #9FE1CB;">
+  <span style="font-size:9px;">★</span> High-fidelity mockups · ACE Gear Tennis · full colour & content
+</div>
+
+<div class="page active" id="h0">
+  <div class="hdr"><div class="logo">ACE GEAR</div><div style="flex:1; display:flex; justify-content:center; gap:4px;"><span class="nav-link on">Shop</span><span class="nav-link">Compare</span><span class="nav-link">Guide</span><span class="nav-link">Contact</span></div><div class="hdr-icon">⌕</div><div class="hdr-icon">◉</div></div>
+  <div class="hero">
+    <div class="hero-tag">New season · 2026 collection</div>
+    <div class="hero-h">Play at your peak.</div>
+    <div class="hero-sub">Pro-grade rackets engineered for power, precision,<br>and every player level from club to court.</div>
+    <div style="display:flex; gap:8px; justify-content:center;"><div class="btn-green">Shop Rackets</div><div class="btn-outline" style="color:#9FE1CB; border-color:#5F5E5A;">View Guide</div></div>
+    <div style="margin-top:14px; font-size:8px; color:#5F5E5A;">▾ scroll</div>
+  </div>
+  <div style="padding:14px;">
+    <div class="sec-title">Featured rackets</div>
+    <div class="sec-sub">Handpicked for the 2026 season</div>
+    <div class="g4" style="margin-bottom:14px;">
+      <div class="card"><div class="card-img">🎾 Pro X</div><div style="font-size:10px; font-weight:500; color:var(--color-text-primary); margin-bottom:2px;">Pro X Blade</div><div class="rating">★★★★★</div><div class="price">$149</div><div style="margin:4px 0;"><span class="spec-pill">300g</span><span class="spec-pill">16×19</span><span class="spec-pill">Head 100</span></div><div style="display:flex; gap:4px; margin-top:6px;"><div class="btn-green" style="flex:1; text-align:center; padding:4px 0;">Cart</div><div class="btn-outline" style="flex:1; text-align:center; padding:4px 0;">View</div></div></div>
+      <div class="card" style="border:1.5px solid #1D9E75; position:relative;"><div style="position:absolute; top:-8px; left:50%; transform:translateX(-50%); background:#1D9E75; color:#E1F5EE; font-size:8px; padding:2px 8px; border-radius:10px; white-space:nowrap;">Best seller</div><div class="card-img">🎾 Elite</div><div style="font-size:10px; font-weight:500; color:var(--color-text-primary); margin-bottom:2px;">Elite 500 Series</div><div class="rating">★★★★★</div><div class="price">$229</div><div style="margin:4px 0;"><span class="spec-pill">285g</span><span class="spec-pill">18×20</span><span class="spec-pill">Head 98</span></div><div style="display:flex; gap:4px; margin-top:6px;"><div class="btn-green" style="flex:1; text-align:center; padding:4px 0;">Cart</div><div class="btn-outline" style="flex:1; text-align:center; padding:4px 0;">View</div></div></div>
+      <div class="card"><div class="card-img">🎾 Speed</div><div style="font-size:10px; font-weight:500; color:var(--color-text-primary); margin-bottom:2px;">Speed Blade Pro</div><div class="rating">★★★★☆</div><div class="price">$189</div><div style="margin:4px 0;"><span class="spec-pill">295g</span><span class="spec-pill">16×19</span><span class="spec-pill">Head 102</span></div><div style="display:flex; gap:4px; margin-top:6px;"><div class="btn-green" style="flex:1; text-align:center; padding:4px 0;">Cart</div><div class="btn-outline" style="flex:1; text-align:center; padding:4px 0;">View</div></div></div>
+      <div class="card"><div class="card-img">🎾 Junior</div><div style="font-size:10px; font-weight:500; color:var(--color-text-primary); margin-bottom:2px;">Ace Club Junior</div><div class="rating">★★★★☆</div><div class="price">$89</div><div style="margin:4px 0;"><span class="spec-pill">255g</span><span class="spec-pill">16×18</span><span class="spec-pill">Head 105</span></div><div style="display:flex; gap:4px; margin-top:6px;"><div class="btn-green" style="flex:1; text-align:center; padding:4px 0;">Cart</div><div class="btn-outline" style="flex:1; text-align:center; padding:4px 0;">View</div></div></div>
+    </div>
+    <div class="g3" style="margin-bottom:14px;">
+      <div style="text-align:center; padding:12px 8px;"><div style="width:32px; height:32px; border-radius:50%; background:#E1F5EE; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-size:14px; color:#085041;">⬡</div><div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:3px;">Pro-grade materials</div><div style="font-size:10px; color:var(--color-text-secondary); line-height:1.5;">High-modulus graphite frames tested to tour standards.</div></div>
+      <div style="text-align:center; padding:12px 8px;"><div style="width:32px; height:32px; border-radius:50%; background:#E1F5EE; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-size:14px; color:#085041;">◎</div><div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:3px;">Precision engineering</div><div style="font-size:10px; color:var(--color-text-secondary); line-height:1.5;">Every string pattern tuned for optimal power and control.</div></div>
+      <div style="text-align:center; padding:12px 8px;"><div style="width:32px; height:32px; border-radius:50%; background:#E1F5EE; margin:0 auto 8px; display:flex; align-items:center; justify-content:center; font-size:14px; color:#085041;">✦</div><div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:3px;">30-day guarantee</div><div style="font-size:10px; color:var(--color-text-secondary); line-height:1.5;">Return anything within 30 days — no questions asked.</div></div>
+    </div>
+    <div style="background:var(--color-background-secondary); border-radius:8px; padding:14px; text-align:center; margin-bottom:14px;">
+      <div class="sec-title" style="margin-bottom:4px;">What players say</div>
+      <div style="font-size:11px; color:var(--color-text-secondary); line-height:1.7; max-width:440px; margin:0 auto 10px; font-style:italic;">"The Elite 500 completely transformed my baseline game. More power, less arm fatigue. I won't play with anything else."</div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px;"><div style="width:26px; height:26px; border-radius:50%; background:#1D9E75; display:flex; align-items:center; justify-content:center; font-size:9px; color:#E1F5EE; font-weight:500;">JM</div><div style="text-align:left;"><div style="font-size:10px; font-weight:500; color:var(--color-text-primary);">Jordan M.</div><div style="font-size:9px; color:var(--color-text-tertiary);">Club player · 4.5 NTRP</div></div></div>
+      <div style="display:flex; justify-content:center; gap:5px; margin-top:10px;"><div style="width:20px; height:3px; border-radius:2px; background:#1D9E75;"></div><div style="width:6px; height:3px; border-radius:2px; background:#D3D1C7;"></div><div style="width:6px; height:3px; border-radius:2px; background:#D3D1C7;"></div></div>
+    </div>
+  </div>
+  <div class="ftr"><div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:14px; margin-bottom:0;"><div><div style="font-size:13px; font-weight:500; color:#5DCAA5; margin-bottom:4px;">ACE Gear</div><div class="ftr-t">Premium tennis equipment for players who refuse to settle.</div></div><div><div class="ftr-h">Shop</div><div class="ftr-t">Rackets<br>Strings<br>Bags<br>Apparel</div></div><div><div class="ftr-h">Support</div><div class="ftr-t">FAQ<br>Returns<br>Sizing<br>Contact</div></div><div><div class="ftr-h">Follow</div><div class="ftr-t">Instagram<br>Twitter/X<br>YouTube</div></div></div><div class="ftr-legal"><span>© 2026 ACE Gear</span><div style="display:flex; gap:10px;"><span>Privacy</span><span>Terms</span></div></div></div>
+</div>
+
+<div class="page" id="h1">
+  <div class="hdr"><div class="logo">ACE GEAR</div><div style="flex:1; display:flex; justify-content:center; gap:4px;"><span class="nav-link on">Shop</span><span class="nav-link">Compare</span><span class="nav-link">Guide</span><span class="nav-link">Contact</span></div><div class="hdr-icon">⌕</div><div class="hdr-icon">◉</div></div>
+  <div class="crumb">Home › <span>Rackets</span></div>
+  <div style="padding:12px;">
+    <div class="g2" style="align-items:start;">
+      <div class="filter-sidebar" style="grid-column:1; max-width:160px;">
+        <div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:8px;">Filters</div>
+        <div class="filter-label">Skill level</div>
+        <div class="filter-opt"><input type="checkbox" checked> Beginner</div>
+        <div class="filter-opt"><input type="checkbox" checked> Intermediate</div>
+        <div class="filter-opt"><input type="checkbox"> Professional</div>
+        <div class="filter-label">Price</div>
+        <div class="filter-opt"><input type="checkbox" checked> Under $100</div>
+        <div class="filter-opt"><input type="checkbox"> $100–$200</div>
+        <div class="filter-opt"><input type="checkbox"> $200+</div>
+        <div class="filter-label">Head size</div>
+        <div class="filter-opt"><input type="checkbox"> Standard (95–100)</div>
+        <div class="filter-opt"><input type="checkbox" checked> Mid-plus (100–105)</div>
+        <div class="filter-opt"><input type="checkbox"> Oversize (105+)</div>
+        <div style="margin-top:10px;"><div class="btn-green" style="width:100%; text-align:center; padding:6px 0;">Apply</div></div>
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+          <div style="font-size:10px; color:var(--color-text-secondary);">Showing <span style="color:var(--color-text-primary); font-weight:500;">12</span> rackets</div>
+          <select style="font-size:10px; padding:4px 6px; border:0.5px solid var(--color-border-secondary); border-radius:4px; background:var(--color-background-primary); color:var(--color-text-primary);"><option>Sort: Featured</option><option>Price: Low–High</option><option>Price: High–Low</option></select>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:14px;">
+          <div class="card"><div class="card-img">🎾</div><div style="font-size:10px; font-weight:500; margin-bottom:1px;">Pro X Blade</div><div class="rating" style="font-size:9px;">★★★★★</div><div class="price" style="font-size:12px;">$149.99</div><div style="margin:3px 0;"><span class="spec-pill">300g</span><span class="spec-pill">Pro</span></div><div class="btn-green" style="width:100%; text-align:center; padding:4px 0; margin-top:5px;">Add to cart</div></div>
+          <div class="card"><div class="card-img">🎾</div><div style="font-size:10px; font-weight:500; margin-bottom:1px;">Elite 500</div><div class="rating" style="font-size:9px;">★★★★★</div><div class="price" style="font-size:12px;">$229.99</div><div style="margin:3px 0;"><span class="spec-pill">285g</span><span class="spec-pill">Pro</span></div><div class="btn-green" style="width:100%; text-align:center; padding:4px 0; margin-top:5px;">Add to cart</div></div>
+          <div class="card"><div class="card-img">🎾</div><div style="font-size:10px; font-weight:500; margin-bottom:1px;">Speed Blade</div><div class="rating" style="font-size:9px;">★★★★☆</div><div class="price" style="font-size:12px;">$189.00</div><div style="margin:3px 0;"><span class="spec-pill">295g</span><span class="spec-pill">Pro</span></div><div class="btn-green" style="width:100%; text-align:center; padding:4px 0; margin-top:5px;">Add to cart</div></div>
+          <div class="card"><div class="card-img">🎾</div><div style="font-size:10px; font-weight:500; margin-bottom:1px;">Club Junior</div><div class="rating" style="font-size:9px;">★★★★☆</div><div class="price" style="font-size:12px;">$89.99</div><div style="margin:3px 0;"><span class="spec-pill">255g</span><span class="spec-pill">Beg</span></div><div class="btn-green" style="width:100%; text-align:center; padding:4px 0; margin-top:5px;">Add to cart</div></div>
+          <div class="card"><div class="card-img">🎾</div><div style="font-size:10px; font-weight:500; margin-bottom:1px;">Ace Starter</div><div class="rating" style="font-size:9px;">★★★☆☆</div><div class="price" style="font-size:12px;">$69.99</div><div style="margin:3px 0;"><span class="spec-pill">260g</span><span class="spec-pill">Beg</span></div><div class="btn-green" style="width:100%; text-align:center; padding:4px 0; margin-top:5px;">Add to cart</div></div>
+          <div class="card"><div class="card-img">🎾</div><div style="font-size:10px; font-weight:500; margin-bottom:1px;">Control Master</div><div class="rating" style="font-size:9px;">★★★★☆</div><div class="price" style="font-size:12px;">$175.00</div><div style="margin:3px 0;"><span class="spec-pill">290g</span><span class="spec-pill">Mid</span></div><div class="btn-green" style="width:100%; text-align:center; padding:4px 0; margin-top:5px;">Add to cart</div></div>
+        </div>
+        <div style="background:#2C2C2A; border-radius:8px; padding:12px;">
+          <div style="display:flex; gap:10px; align-items:start;">
+            <div style="background:#1D9E75; border-radius:6px; padding:8px; width:70px; text-align:center; color:#E1F5EE; font-size:18px; flex-shrink:0;">🎾</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:6px; margin-bottom:3px;"><span style="font-size:12px; font-weight:500; color:#F1EFE8;">Elite 500 Series</span><span class="badge badge-green">Best seller</span></div>
+              <div class="rating" style="font-size:10px; margin-bottom:4px;">★★★★★ <span style="color:#5F5E5A; font-size:9px;">(142 reviews)</span></div>
+              <div style="font-size:18px; font-weight:500; color:#5DCAA5; margin-bottom:6px;">$229.99</div>
+              <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin-bottom:8px; font-size:9px;">
+                <div style="background:#3a3a38; border-radius:4px; padding:4px 6px; color:#9FE1CB;">Weight<br><span style="font-weight:500; color:#F1EFE8;">285g</span></div>
+                <div style="background:#3a3a38; border-radius:4px; padding:4px 6px; color:#9FE1CB;">Pattern<br><span style="font-weight:500; color:#F1EFE8;">18×20</span></div>
+                <div style="background:#3a3a38; border-radius:4px; padding:4px 6px; color:#9FE1CB;">Head<br><span style="font-weight:500; color:#F1EFE8;">98 sq in</span></div>
+              </div>
+              <div style="display:flex; gap:6px;"><div class="btn-green">Add to cart</div><div class="btn-outline" style="color:#9FE1CB; border-color:#5F5E5A;">Compare</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr"><div class="ftr-legal"><span>© 2026 ACE Gear</span><div style="display:flex; gap:10px;"><span>Privacy</span><span>Terms</span></div></div></div>
+</div>
+
+<div class="page" id="h2">
+  <div class="hdr"><div class="logo">ACE GEAR</div><div style="flex:1; display:flex; justify-content:center; gap:4px;"><span class="nav-link">Shop</span><span class="nav-link on">Compare</span><span class="nav-link">Guide</span><span class="nav-link">Contact</span></div><div class="hdr-icon">⌕</div><div class="hdr-icon">◉</div></div>
+  <div style="background:#2C2C2A; padding:12px 14px 10px; text-align:center;">
+    <div style="font-size:14px; font-weight:500; color:#F1EFE8; margin-bottom:3px;">Compare rackets</div>
+    <div style="font-size:10px; color:#888780;">Select up to 3 rackets to see a side-by-side breakdown</div>
+  </div>
+  <div style="padding:12px;">
+    <div class="g3" style="margin-bottom:12px;">
+      <div class="card" style="border:1.5px solid #1D9E75;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><div style="width:28px; height:28px; border-radius:6px; background:#1D9E75; display:flex; align-items:center; justify-content:center; font-size:14px; color:#E1F5EE; flex-shrink:0;">🎾</div><div><div style="font-size:10px; font-weight:500; color:var(--color-text-primary);">Elite 500 Series</div><div class="price" style="font-size:11px;">$229.99</div></div></div>
+        <div style="display:flex; gap:3px; flex-wrap:wrap; margin-bottom:6px;"><span class="spec-pill">285g</span><span class="spec-pill">18×20</span><span class="spec-pill">Head 98</span></div>
+        <div class="btn-outline" style="width:100%; text-align:center; font-size:9px; padding:3px 0; color:#E24B4A; border-color:#E24B4A;">Remove</div>
+      </div>
+      <div class="card" style="border:1.5px solid #1D9E75;">
+        <div style="display:flex; align-items:center; gap:6px; margin-bottom:6px;"><div style="width:28px; height:28px; border-radius:6px; background:#1D9E75; display:flex; align-items:center; justify-content:center; font-size:14px; color:#E1F5EE; flex-shrink:0;">🎾</div><div><div style="font-size:10px; font-weight:500; color:var(--color-text-primary);">Pro X Blade</div><div class="price" style="font-size:11px;">$149.99</div></div></div>
+        <div style="display:flex; gap:3px; flex-wrap:wrap; margin-bottom:6px;"><span class="spec-pill">300g</span><span class="spec-pill">16×19</span><span class="spec-pill">Head 100</span></div>
+        <div class="btn-outline" style="width:100%; text-align:center; font-size:9px; padding:3px 0; color:#E24B4A; border-color:#E24B4A;">Remove</div>
+      </div>
+      <div class="comp-slot">
+        <div style="font-size:20px; color:#1D9E75;">+</div>
+        <div style="font-size:10px; color:#0F6E56; font-weight:500;">Add racket</div>
+        <div style="font-size:9px; color:#5DCAA5;">Select from catalogue</div>
+      </div>
+    </div>
+    <div style="overflow-x:auto; margin-bottom:12px;">
+      <table class="comp-table">
+        <thead><tr><th style="text-align:left;">Attribute</th><th>Elite 500</th><th>Pro X Blade</th></tr></thead>
+        <tbody>
+          <tr><td>Weight</td><td>285g</td><td class="win">300g</td></tr>
+          <tr><td>String pattern</td><td class="win">18×20</td><td>16×19</td></tr>
+          <tr><td>Head size</td><td>98 sq in</td><td class="win">100 sq in</td></tr>
+          <tr><td>Material</td><td class="win">HM Graphite</td><td>Graphite</td></tr>
+          <tr><td>Balance</td><td class="win">Head light</td><td>Even</td></tr>
+          <tr><td>Power rating</td><td>7/10</td><td class="win">8.5/10</td></tr>
+          <tr><td>Control rating</td><td class="win">9/10</td><td>7.5/10</td></tr>
+          <tr><td>Price</td><td>$229.99</td><td class="win">$149.99</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="background:#E1F5EE; border-radius:8px; padding:12px; display:flex; align-items:center; gap:10px;">
+      <div style="width:36px; height:36px; border-radius:50%; background:#1D9E75; display:flex; align-items:center; justify-content:center; font-size:16px; color:#E1F5EE; flex-shrink:0;">★</div>
+      <div style="flex:1;"><div style="font-size:10px; font-weight:500; color:#085041; margin-bottom:2px;">Best match for you</div><div style="font-size:12px; font-weight:500; color:#0F6E56;">Pro X Blade — $149.99</div><div style="font-size:10px; color:#085041;">Better power rating and value. Ideal for baseline players.</div></div>
+      <div class="btn-green">Buy now</div>
+    </div>
+  </div>
+  <div class="ftr"><div class="ftr-legal"><span>© 2026 ACE Gear</span><div style="display:flex; gap:10px;"><span>Privacy</span><span>Terms</span></div></div></div>
+</div>
+
+<div class="page" id="h3">
+  <div class="hdr"><div class="logo">ACE GEAR</div><div style="flex:1; display:flex; justify-content:center; gap:4px;"><span class="nav-link">Shop</span><span class="nav-link">Compare</span><span class="nav-link on">Guide</span><span class="nav-link">Contact</span></div><div class="hdr-icon">⌕</div><div class="hdr-icon">◉</div></div>
+  <div style="background:#2C2C2A; padding:14px 16px; text-align:center;">
+    <div style="font-size:14px; font-weight:500; color:#F1EFE8; margin-bottom:3px;">Racket buying guide</div>
+    <div style="font-size:10px; color:#888780;">Everything you need to find the right racket for your game</div>
+  </div>
+  <div style="padding:12px;">
+    <div class="g2" style="align-items:start;">
+      <div class="guide-toc" style="max-width:160px;">
+        <div style="font-size:10px; font-weight:500; color:var(--color-text-primary); margin-bottom:8px;">Contents</div>
+        <div class="toc-item">How to choose a racket</div>
+        <div class="toc-item">Grip size guide</div>
+        <div class="toc-item">Weight &amp; balance</div>
+        <div class="toc-item">Tips for players</div>
+        <div style="margin-top:12px; padding:8px; background:#E1F5EE; border-radius:6px; text-align:center;">
+          <div style="font-size:9px; color:#085041; margin-bottom:4px; font-weight:500;">Not sure?</div>
+          <div style="font-size:9px; color:#0F6E56; margin-bottom:6px;">Use our compare tool</div>
+          <div class="btn-green" style="font-size:9px; padding:4px 10px;">Compare →</div>
+        </div>
+      </div>
+      <div>
+        <div class="guide-section">
+          <div class="guide-section-title">How to choose a racket</div>
+          <div class="guide-body">Match your racket to your skill level. Beginners benefit from lighter frames with larger head sizes for a bigger sweet spot. As you progress, move toward heavier, more precise frames that reward good technique.</div>
+          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:5px; margin-top:8px;">
+            <div style="text-align:center; padding:6px; background:var(--color-background-secondary); border-radius:6px;"><div style="font-size:9px; font-weight:500; color:var(--color-text-primary);">Beginner</div><div style="font-size:9px; color:var(--color-text-secondary);">Light · Head-heavy · 105+ sq in</div></div>
+            <div style="text-align:center; padding:6px; background:#E1F5EE; border-radius:6px;"><div style="font-size:9px; font-weight:500; color:#085041;">Intermediate</div><div style="font-size:9px; color:#0F6E56;">Mid · Even · 100–105 sq in</div></div>
+            <div style="text-align:center; padding:6px; background:#2C2C2A; border-radius:6px;"><div style="font-size:9px; font-weight:500; color:#9FE1CB;">Professional</div><div style="font-size:9px; color:#5F5E5A;">Heavy · Head-light · 95–100 sq in</div></div>
+          </div>
+        </div>
+        <div class="guide-section">
+          <div class="guide-section-title">Grip size guide</div>
+          <div class="guide-body">To find your grip size, place a ruler along your palm. Measure from the ring finger crease to the tip of the ring finger. Standard grips range from L1 (4") to L5 (4½").</div>
+          <div class="tip-box">Tip: When in doubt, choose a smaller grip — you can always add an overgrip for more thickness.</div>
+        </div>
+        <div class="guide-section">
+          <div class="guide-section-title">Weight &amp; balance</div>
+          <div class="guide-body">Lighter rackets (under 275g) are easier to manoeuvre but offer less stability. Heavier frames (over 300g) deliver more power and dampening. Head-heavy frames add power; head-light frames improve control and reduce fatigue.</div>
+        </div>
+        <div class="guide-section">
+          <div class="guide-section-title">Tips for players</div>
+          <div class="guide-body" style="margin-bottom:0;">Demo before you buy · String at mid-tension to start · Restring every 3 months · Protect your frame from humidity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr"><div class="ftr-legal"><span>© 2026 ACE Gear</span><div style="display:flex; gap:10px;"><span>Privacy</span><span>Terms</span></div></div></div>
+</div>
+
+<div class="page" id="h4">
+  <div class="hdr"><div class="logo">ACE GEAR</div><div style="flex:1; display:flex; justify-content:center; gap:4px;"><span class="nav-link">Shop</span><span class="nav-link">Compare</span><span class="nav-link">Guide</span><span class="nav-link on">Contact</span></div><div class="hdr-icon">⌕</div><div class="hdr-icon">◉</div></div>
+  <div style="background:#2C2C2A; padding:14px; text-align:center;">
+    <div style="font-size:14px; font-weight:500; color:#F1EFE8; margin-bottom:3px;">Get in touch</div>
+    <div style="font-size:10px; color:#888780;">We typically reply within one business day</div>
+  </div>
+  <div style="padding:12px;">
+    <div class="g2" style="align-items:start; margin-bottom:12px;">
+      <div class="card">
+        <div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:10px;">Send us a message</div>
+        <div class="form-group"><label class="form-label">Your name</label><input class="form-input" type="text" placeholder="e.g. Sam Jones"></div>
+        <div class="form-group"><label class="form-label">Email address</label><input class="form-input" type="email" placeholder="sam@email.com"></div>
+        <div class="form-group"><label class="form-label">Subject</label><select class="form-input"><option>General enquiry</option><option>Product question</option><option>Return / refund</option><option>Order tracking</option></select></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell us how we can help..."></textarea></div>
+        <div class="btn-green" style="width:100%; text-align:center; padding:7px 0;">Send message</div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:8px;">
+          <div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:8px;">Contact details</div>
+          <div class="contact-info-row"><div class="ci-icon">@</div><span>support@acegear.com</span></div>
+          <div class="contact-info-row"><div class="ci-icon">☎</div><span>+27 11 555 0199</span></div>
+          <div class="contact-info-row"><div class="ci-icon">⌖</div><span>Johannesburg, South Africa</span></div>
+        </div>
+        <div class="card" style="margin-bottom:8px;">
+          <div style="font-size:11px; font-weight:500; color:var(--color-text-primary); margin-bottom:6px;">Business hours</div>
+          <div style="font-size:10px; color:var(--color-text-secondary); line-height:1.9;">Mon–Fri: 8am – 6pm SAST<br>Saturday: 9am – 1pm SAST<br>Sunday: Closed</div>
+        </div>
+        <div style="background:#E1F5EE; border-radius:8px; padding:10px; text-align:center;">
+          <div style="font-size:10px; font-weight:500; color:#085041; margin-bottom:2px;">Live chat available</div>
+          <div style="font-size:9px; color:#0F6E56; margin-bottom:6px;">Mon–Fri · 9am – 5pm</div>
+          <div class="btn-green" style="font-size:9px; padding:5px 14px;">Start chat</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--color-background-secondary); border-radius:8px; padding:16px; text-align:center;" id="ty-section" style="display:none;">
+      <div class="ty-circle">✓</div>
+      <div style="font-size:13px; font-weight:500; color:var(--color-text-primary); margin-bottom:4px;">Message sent!</div>
+      <div style="font-size:10px; color:var(--color-text-secondary); margin-bottom:10px;">Thanks for reaching out. We'll get back to you within one business day.</div>
+      <div class="btn-outline" style="font-size:10px;">Back to home</div>
+    </div>
+  </div>
+  <div class="ftr"><div class="ftr-legal"><span>© 2026 ACE Gear</span><div style="display:flex; gap:10px;"><span>Privacy</span><span>Terms</span></div></div></div>
+</div>
+
+<script>
+function showPage(n) {
+  document.querySelectorAll('.page').forEach((p,i) => p.classList.toggle('active', i===n));
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===n));
+}
+</script>
