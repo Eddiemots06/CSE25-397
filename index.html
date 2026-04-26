@@ -1,424 +1,346 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AceGear Pro Kinetic Z1 | Precision Performance</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<a href="#home" class="hover:text-lime-500">Home</a>
-<a href="#rackets" class="hover:text-lime-500">Rackets</a>
-<a href="#compare" class="hover:text-lime-500">Compare</a>
-<a href="#guide" class="hover:text-lime-500">Guide</a>
-<a href="#contact" class="hover:text-lime-500">Contact</a>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "secondary-dim": "#4f4f4f",
-                    "on-secondary-fixed": "#3f3f3f",
-                    "inverse-primary": "#cafd00",
-                    "tertiary-container": "#fce047",
-                    "surface-container-high": "#e1e2e6",
-                    "outline": "#757779",
-                    "on-surface-variant": "#5a5c5e",
-                    "secondary-container": "#e2e2e2",
-                    "outline-variant": "#acadaf",
-                    "on-primary": "#e1ff88",
-                    "on-secondary-fixed-variant": "#5b5b5b",
-                    "background": "#f6f6f9",
-                    "on-error-container": "#520c00",
-                    "tertiary": "#6a5b00",
-                    "on-background": "#2d2f31",
-                    "on-primary-fixed": "#3a4a00",
-                    "on-error": "#ffefec",
-                    "inverse-on-surface": "#9c9d9f",
-                    "tertiary-fixed-dim": "#edd13a",
-                    "primary-fixed-dim": "#beee00",
-                    "error-container": "#f95630",
-                    "primary": "#4e6300",
-                    "inverse-surface": "#0c0e10",
-                    "primary-dim": "#435600",
-                    "on-surface": "#2d2f31",
-                    "on-secondary-container": "#525252",
-                    "surface-container-lowest": "#ffffff",
-                    "secondary-fixed-dim": "#d4d4d4",
-                    "on-tertiary-fixed": "#483d00",
-                    "on-primary-fixed-variant": "#526900",
-                    "tertiary-dim": "#5c4f00",
-                    "primary-container": "#cafd00",
-                    "surface-variant": "#dbdde0",
-                    "tertiary-fixed": "#fce047",
-                    "surface-bright": "#f6f6f9",
-                    "on-tertiary": "#fff3c4",
-                    "surface": "#f6f6f9",
-                    "secondary-fixed": "#e2e2e2",
-                    "on-primary-container": "#4a5e00",
-                    "secondary": "#5b5b5b",
-                    "on-tertiary-container": "#5d5000",
-                    "error": "#b02500",
-                    "surface-container-highest": "#dbdde0",
-                    "surface-container": "#e7e8eb",
-                    "on-secondary": "#f3f3f3",
-                    "surface-container-low": "#f0f0f3",
-                    "on-tertiary-fixed-variant": "#685900",
-                    "error-dim": "#b92902",
-                    "primary-fixed": "#cafd00",
-                    "surface-dim": "#d2d4d8",
-                    "surface-tint": "#4e6300"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "fontFamily": {
-                    "headline": ["Space Grotesk"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, .brand-font { font-family: 'Space Grotesk', sans-serif; }
-    </style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACE Gear — Premium Tennis Equipment</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-8 py-4 max-w-full mx-auto">
-<div class="text-2xl font-black italic tracking-tighter text-zinc-900 dark:text-zinc-50">AceGear</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="font-inter text-zinc-900 dark:text-zinc-50 border-b-2 border-lime-500 pb-1 hover:text-lime-600 dark:hover:text-lime-300 transition-colors duration-200" href="#">Shop</a>
-<a class="font-inter text-zinc-500 dark:text-zinc-400 hover:text-lime-600 dark:hover:text-lime-300 transition-colors duration-200" href="#">Categories</a>
-<a class="font-inter text-zinc-500 dark:text-zinc-400 hover:text-lime-600 dark:hover:text-lime-300 transition-colors duration-200" href="#">Pro Series</a>
-<a class="font-inter text-zinc-500 dark:text-zinc-400 hover:text-lime-600 dark:hover:text-lime-300 transition-colors duration-200" href="#">About</a>
-</div>
-<div class="flex items-center gap-6">
-<button class="scale-95 active:scale-90 transition-transform text-zinc-900 dark:text-zinc-50">
-<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
-</button>
-<button class="scale-95 active:scale-90 transition-transform text-zinc-900 dark:text-zinc-50">
-<span class="material-symbols-outlined" data-icon="person">person</span>
-</button>
-</div>
-</nav>
-<main class="pt-24 pb-32">
-<div class="max-w-7xl mx-auto px-6 lg:px-8">
-<!-- Breadcrumbs -->
-<nav class="mb-12 flex items-center gap-2 text-sm text-on-surface-variant">
-<span>Shop</span>
-<span class="material-symbols-outlined text-xs">chevron_right</span>
-<span>Rackets</span>
-<span class="material-symbols-outlined text-xs">chevron_right</span>
-<span class="text-on-surface font-semibold">Pro Kinetic Z1</span>
-</nav>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-<!-- Product Gallery: Asymmetrical Grid -->
-<div class="lg:col-span-7 grid grid-cols-2 gap-4">
-<div class="col-span-2 bg-surface-container-lowest rounded-xl overflow-hidden aspect-[4/5] relative group">
-<img alt="AceGear Pro Kinetic Z1 Main View" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up studio shot of a professional carbon fiber tennis racket with lime green accents against a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUk6XqGXhLpBGDBu44NwzF1hxUgQ1dUb-5NLd-jGSs9aQjp7L9kUOuWvh8sCvyZxHAlHA7bJapxTlCzgev8ZBxs9LfsHsoQqn46CV76JooBL88o36fa8zsOqt_MR48ba3MUB470YULgDebGQAcLK7moE7oBBHK4pZoxEpGVjuTsjw9iUINQU7Zgf63nGv9LbMNj-phMhZ_ha8uRERNb2XxG7XCjvHcBwkDtbFmpcWECO90E8hiq_a_KgN-jS6rFs0YiJw56hQarHg"/>
-<div class="absolute top-6 left-6 bg-inverse-surface text-inverse-primary px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase">Elite Series</div>
-</div>
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-square">
-<img alt="Racket Grip Detail" class="w-full h-full object-cover" data-alt="Extreme close-up of a high-performance synthetic tennis racket grip with perforated texture and embossed logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACduXcvMpSP83BF7QYO72U-SrnfrK48tUqO0YXnZo1bWKkxk4paRVIuNcxhyLB1fxCN5ekQ4GehOXf6ABNF0_tQYkYR6ZkKnBSUv6s6BF_Qobze4rso6dNsIHnc-1UAzo0hZROzgpx9OeXk58_FRbwAAcl8qZb8UEPqI0rXGxmgT_TGBMWzRBowtKdwZw2HoS6ZtS0dQE0lTAxtDZowHly_Y_VGeWZTazadVYGgxvVnD5ajFKpLkw0ndfU6_9fVNlOMoS4wSxEIMw"/>
-</div>
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-square">
-<img alt="String Pattern Detail" class="w-full h-full object-cover" data-alt="Close-up of tennis racket strings showing the intricate weave and the lime green frame edge with technical markings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdgs4NMxqyqVxZ2jw-1U_o-3BDzghKUYl5G62VNz_K9xLtFF94m-zK_DF15T9rDTw7u-FGzmfwdKWOdGoVQHJOuDpih4fd1Rpj-mtv5WmVBXKCk5T4PyeM9zAVSWBmbIgfneVEO9RNzvrQX-AmNdnzsOFNWEpnINrhXW4z4aSWprBv4RuvOA32FRRk_EUBBU3RsdOmgPwdtrgIxEEueQJBSyd192UZ4gcR7pPelg4zqTeBgLB1ttGoIMfBgldrfYZR5b0DNVd0yWI"/>
-</div>
-</div>
-<!-- Purchase Section -->
-<div class="lg:col-span-5 sticky top-32">
-<div class="mb-2 text-primary-fixed-variant font-bold tracking-widest uppercase text-xs">Engineered for Velocity</div>
-<h1 class="text-5xl lg:text-6xl font-black tracking-tighter mb-4 text-on-surface">Pro Kinetic Z1</h1>
-<div class="flex items-center gap-4 mb-8">
-<div class="flex text-primary">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
-</div>
-<span class="text-on-surface-variant text-sm">(128 reviews)</span>
-</div>
-<p class="text-lg text-on-surface-variant mb-10 leading-relaxed">
-                        The Z1 is the ultimate weapon for aggressive baseliners. Utilizing Kinetic Energy Transfer technology, it delivers explosive power without sacrificing the razor-sharp precision required for high-stakes competition.
-                    </p>
-<div class="bg-surface-container-low p-8 rounded-xl mb-10">
-<div class="flex justify-between items-end mb-8">
-<div>
-<span class="text-sm text-on-surface-variant block mb-1">Professional Grade</span>
-<span class="text-4xl font-bold tracking-tight text-on-surface">$249.00</span>
-</div>
-<button class="flex items-center gap-2 text-on-surface-variant hover:text-error transition-colors">
-<span class="material-symbols-outlined">favorite</span>
-<span class="text-sm font-semibold uppercase tracking-widest">Wishlist</span>
-</button>
-</div>
-<div class="grid grid-cols-1 gap-4">
-<button class="w-full bg-primary-fixed text-on-primary-fixed py-5 rounded-lg font-bold text-lg tracking-wide hover:shadow-xl hover:shadow-primary/20 transition-all active:scale-95">
-                                ADD TO CART
-                            </button>
-<button class="w-full bg-inverse-surface text-surface py-5 rounded-lg font-bold text-lg tracking-wide hover:opacity-90 transition-all active:scale-95">
-                                BUY IT NOW
-                            </button>
-</div>
-<div class="mt-6 flex items-center justify-center gap-6 text-xs text-on-surface-variant font-medium uppercase tracking-widest">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">local_shipping</span> Free Shipping</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">verified</span> 2 Year Warranty</span>
-</div>
-</div>
-<!-- Performance Ratings -->
-<div class="grid grid-cols-3 gap-4">
-<div class="flex flex-col items-center p-4 bg-surface-container-lowest rounded-lg">
-<span class="material-symbols-outlined text-primary mb-2" data-icon="bolt">bolt</span>
-<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant mb-1">Power</span>
-<span class="text-lg font-bold text-on-surface">9.5</span>
-</div>
-<div class="flex flex-col items-center p-4 bg-surface-container-lowest rounded-lg">
-<span class="material-symbols-outlined text-primary mb-2" data-icon="target">target</span>
-<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant mb-1">Control</span>
-<span class="text-lg font-bold text-on-surface">8.8</span>
-</div>
-<div class="flex flex-col items-center p-4 bg-surface-container-lowest rounded-lg">
-<span class="material-symbols-outlined text-primary mb-2" data-icon="cyclone">cyclone</span>
-<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface-variant mb-1">Spin</span>
-<span class="text-lg font-bold text-on-surface">9.2</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Specs & Benefits Section -->
-<section class="mt-32">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-12 border-b border-outline-variant/20 pb-6">
-<h2 class="text-4xl font-black tracking-tighter">TECHNICAL SPECIFICATIONS</h2>
-<span class="text-primary-fixed-variant font-bold tracking-widest text-sm uppercase">Engineered in Germany</span>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-<div class="space-y-4">
-<div class="flex justify-between py-6 border-b border-outline-variant/10">
-<span class="text-on-surface-variant font-medium">Weight (Unstrung)</span>
-<span class="text-on-surface font-bold">305g / 10.8oz</span>
-</div>
-<div class="flex justify-between py-6 border-b border-outline-variant/10">
-<span class="text-on-surface-variant font-medium">Head Size</span>
-<span class="text-on-surface font-bold">98 sq. in. / 632 sq. cm.</span>
-</div>
-<div class="flex justify-between py-6 border-b border-outline-variant/10">
-<span class="text-on-surface-variant font-medium">Balance</span>
-<span class="text-on-surface font-bold">320mm / 7 pts HL</span>
-</div>
-<div class="flex justify-between py-6 border-b border-outline-variant/10">
-<span class="text-on-surface-variant font-medium">String Pattern</span>
-<span class="text-on-surface font-bold">16 x 19</span>
-</div>
-<div class="flex justify-between py-6 border-b border-outline-variant/10">
-<span class="text-on-surface-variant font-medium">Beam Width</span>
-<span class="text-on-surface font-bold">21mm / 21mm / 21mm</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="p-8 bg-inverse-surface text-surface rounded-xl flex flex-col justify-between">
-<span class="material-symbols-outlined text-primary-fixed text-4xl mb-4" data-icon="model_training">model_training</span>
-<div>
-<h3 class="text-xl font-bold mb-2">Kinetic Carbon Layup</h3>
-<p class="text-surface-variant text-sm leading-relaxed">Responsive fiber orientation allows for maximum flex during impact, returning energy instantly to the ball.</p>
-</div>
-</div>
-<div class="p-8 bg-surface-container-high rounded-xl flex flex-col justify-between">
-<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="vibration">vibration</span>
-<div>
-<h3 class="text-xl font-bold mb-2">Aero-Dampening</h3>
-<p class="text-on-surface-variant text-sm leading-relaxed">Integrated polymer crystals in the handle filter out harsh vibrations while maintaining high-fidelity feel.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Reviews Section -->
-<section class="mt-32">
-<div class="flex items-center justify-between mb-16">
-<h2 class="text-4xl font-black tracking-tighter uppercase">Player Reviews</h2>
-<button class="px-6 py-3 border-2 border-on-surface text-on-surface font-bold rounded-lg hover:bg-on-surface hover:text-surface transition-all uppercase tracking-widest text-xs">Write a Review</button>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Review Card 1 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-<div class="flex text-primary mb-4">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<h4 class="font-bold text-lg mb-4">Unmatched Stability</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6 italic">"Switched from a competitor's model and the difference in stability at the net is night and day. The Z1 handles heavy serves with ease."</p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">MS</div>
-<div>
-<span class="block text-sm font-bold">Marcus S.</span>
-<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Verified Pro Player</span>
-</div>
-</div>
-</div>
-<!-- Review Card 2 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-<div class="flex text-primary mb-4">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm">star</span>
-</div>
-<h4 class="font-bold text-lg mb-4">Pure Power</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6 italic">"My serve speed increased by at least 5mph. The racket feels like an extension of my arm. Only reason not 5 stars is the stock grip was a bit thin for my taste."</p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">JL</div>
-<div>
-<span class="block text-sm font-bold">Jessica L.</span>
-<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">D1 Collegiate Athlete</span>
-</div>
-</div>
-</div>
-<!-- Review Card 3 -->
-<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-<div class="flex text-primary mb-4">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<h4 class="font-bold text-lg mb-4">Control Freak's Dream</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed mb-6 italic">"The 98sq inch head provides incredible feedback. I can place the ball on a dime. The kinetic tech really does dampen the shock."</p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary">DP</div>
-<div>
-<span class="block text-sm font-bold">David P.</span>
-<span class="text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">Club Champion</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Related Products: 'Complete your Gear' -->
-<section class="mt-32">
-<div class="flex items-center gap-4 mb-12">
-<h2 class="text-3xl font-black tracking-tighter uppercase whitespace-nowrap">Complete your Gear</h2>
-<div class="h-[2px] w-full bg-outline-variant/20"></div>
-</div>
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Related Item 1 -->
-<div class="group cursor-pointer">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-square mb-4 relative">
-<img alt="AceGear Velocity Shoes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Modern high-performance tennis shoes in white and lime green on a clean studio floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx3BqEyvokoCWaJPWQZPqIUjm0WaiEdsoFEforMAUHxB3fjPHcZzz6CrfkE3rG7_klvrD88Ii_vZcwcISK_wRYr51ujgeVuJoUV2ruMyJxlsjrJCxUDjzFlEhkhJE_GlJuDumUx8f4hv5xcuQoGWX0j7FCgSN8yuNT6-AnijGWUSZwwsFDc1tQHRoO584WuI1Jh6iduAWX-K0wqFAyhbEvLjdvkueJd-CnBFmR0AoLXiw4AZwUwqViJE6q5krJBNu_GuFReWoTYjY"/>
-<div class="absolute bottom-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-<button class="bg-primary-fixed text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-</div>
-<h5 class="font-bold text-sm mb-1">Kinetic Velocity X1</h5>
-<p class="text-on-surface-variant text-xs mb-2">Footwear</p>
-<p class="font-bold text-primary">$159.00</p>
-</div>
-<!-- Related Item 2 -->
-<div class="group cursor-pointer">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-square mb-4 relative">
-<img alt="AceGear Pro Bag" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Professional multi-racket tennis bag in black with vibrant neon green piping and AceGear branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb3LiCIoeAnfMR3PjneK18x8HeEocLVvvvXvsIFAElM43APL18v4ctuQZ258ia0512uu-J9xxGn0VG1gH-SNk6RhvHmIuvWZuxyGsH2-0wfsQ3WXuHO7gAUy5Xm2y26AuoC9giBAWOuHeUAZzxKrrYlHAcIUC16NfEjjZujisx9Dhre61PWHSJhAjJYqCDtxWhOdtXe3UO75AZ0HMSxX64m26a-WUt0mk4amEztSljQRiYqGlImhbAiYH1qSttQ7pM2FIXPrLHDFo"/>
-<div class="absolute bottom-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-<button class="bg-primary-fixed text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-</div>
-<h5 class="font-bold text-sm mb-1">Pro Tour 12-Pack Bag</h5>
-<p class="text-on-surface-variant text-xs mb-2">Equipment</p>
-<p class="font-bold text-primary">$110.00</p>
-</div>
-<!-- Related Item 3 -->
-<div class="group cursor-pointer">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-square mb-4 relative">
-<img alt="AceGear Poly Strings" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A coil of high-tension polyester tennis strings in vibrant neon green neon color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzKti02ew0_eHxL3NT8mKE7LtPneOe4rWAKu5HITewSMAdym3_PsnjRhU-exhaTASElRdTjsZENhpNjlyUsHS1QgkklA0SSFvv2qPaQ9hgDj_sRU115x3AGMDcqWwJ14oI2LqxBSJUfIxrNA2DNZ1uf1GGF0bZEI3MxCyWcXhli7Wn4ofIFOkHucDy_DA2l1T5tnDKtszULxXZZuYHV-aBgAN-lrAV0A3Lac-is8XOlgOa6-78--rF70EV6gmwvAvoCCq8BRzJj0o"/>
-<div class="absolute bottom-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-<button class="bg-primary-fixed text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-</div>
-<h5 class="font-bold text-sm mb-1">Spin Master Poly Reel</h5>
-<p class="text-on-surface-variant text-xs mb-2">Strings</p>
-<p class="font-bold text-primary">$180.00</p>
-</div>
-<!-- Related Item 4 -->
-<div class="group cursor-pointer">
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden aspect-square mb-4 relative">
-<img alt="AceGear Wristbands" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Premium athletic wristbands in charcoal grey and neon green on a dark minimalist surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8JgolM7ZwErtJK4AXcqSnMZVtxxequNH0BY6_up70c_DFZJ8sZN0jWGlqxPpPWDa0NPWjaVrRf5R59mgm_Moe27S4n_K4gyILZgKBLP4PlxbKXapqwmvjEQOWvZqyhKSs6869YWYoQu3O-Sf-MhRmjKxmx-dAlYFQ7DxBHWQGqlxsILzW-4U1wFSilv83M22I0Yfp8EywIDBsFVsM66YS-9QAmXZSSfGEeQJxrtIID_bbVb-1Zbd94Ngb5stOGeIQqUOn1-egKsk"/>
-<div class="absolute bottom-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all">
-<button class="bg-primary-fixed text-on-primary-fixed w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-<span class="material-symbols-outlined">add</span>
-</button>
-</div>
-</div>
-<h5 class="font-bold text-sm mb-1">Pro Performance Wristbands</h5>
-<p class="text-on-surface-variant text-xs mb-2">Accessories</p>
-<p class="font-bold text-primary">$12.00</p>
-</div>
-</div>
-</section>
-</div>
-</main>
-<!-- Footer -->
-<footer class="bg-zinc-950 dark:bg-black w-full py-16 px-8 border-t border-zinc-800">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
-<div>
-<div class="text-xl font-black text-white mb-6">AceGear</div>
-<p class="text-zinc-500 text-xs leading-relaxed uppercase tracking-widest">
-                    Pioneering kinetic excellence for the modern athlete. Precision engineered in Germany.
-                </p>
-</div>
-<div>
-<h6 class="text-lime-400 font-inter text-sm uppercase tracking-widest mb-6">Explore</h6>
-<ul class="space-y-4">
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Shop All</a></li>
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Technologies</a></li>
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Pro Roster</a></li>
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Racket Quiz</a></li>
-</ul>
-</div>
-<div>
-<h6 class="text-lime-400 font-inter text-sm uppercase tracking-widest mb-6">Support</h6>
-<ul class="space-y-4">
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Privacy Policy</a></li>
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Shipping &amp; Returns</a></li>
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Contact Us</a></li>
-<li><a class="text-zinc-500 hover:text-white transition-colors text-sm uppercase tracking-widest" href="#">Warranty</a></li>
-</ul>
-</div>
-<div>
-<h6 class="text-lime-400 font-inter text-sm uppercase tracking-widest mb-6">Newsletter</h6>
-<p class="text-zinc-500 text-xs mb-6 uppercase tracking-widest">Get the latest on gear drops and pro tips.</p>
-<div class="flex">
-<input class="bg-zinc-900 border-none text-white text-xs p-3 flex-grow tracking-widest focus:ring-1 focus:ring-lime-400 rounded-l" placeholder="EMAIL ADDRESS" type="email"/>
-<button class="bg-lime-400 text-zinc-950 p-3 rounded-r">
-<span class="material-symbols-outlined">arrow_forward</span>
-</button>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-4">
-<span class="text-zinc-500 text-[10px] uppercase tracking-widest">© 2024 AceGear Kinetic Precision. All rights reserved.</span>
-<div class="flex gap-6">
-<span class="material-symbols-outlined text-zinc-500 hover:text-lime-400 cursor-pointer">social_leaderboard</span>
-<span class="material-symbols-outlined text-zinc-500 hover:text-lime-400 cursor-pointer">share</span>
-<span class="material-symbols-outlined text-zinc-500 hover:text-lime-400 cursor-pointer">play_circle</span>
-</div>
-</div>
-</footer>
-</body></html>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">ACE<span> GEAR</span></a>
+      <div class="navbar-nav">
+        <a class="nav-link active" href="index.html">Shop</a>
+        <a class="nav-link" href="rackets.html">Rackets</a>
+        <a class="nav-link" href="compare.html">Compare</a>
+        <a class="nav-link" href="guide.html">Guide</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="nav-icon-btn" aria-label="Search">&#128269;</button>
+        <button class="nav-icon-btn cart-badge" aria-label="Cart">&#128722;</button>
+        <button class="nav-icon-btn" aria-label="Account">&#128100;</button>
+        <button class="navbar-toggler" aria-label="Menu">&#9776;</button>
+      </div>
+    </div>
+    <div class="navbar-collapse">
+      <a class="nav-link" href="index.html">Shop</a>
+      <a class="nav-link" href="rackets.html">Rackets</a>
+      <a class="nav-link" href="compare.html">Compare</a>
+      <a class="nav-link" href="guide.html">Guide</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-img-panel">🎾</div>
+    <div class="container position-relative">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="hero-badge">2026 season collection</div>
+          <h1>Play at<br>your <em>peak.</em></h1>
+          <p>Pro-grade rackets engineered for power, precision, and every player level — from first serve to match point.</p>
+          <div class="hero-actions">
+            <a href="rackets.html" class="btn btn-primary btn-lg">Shop Rackets &#8594;</a>
+            <a href="guide.html" class="btn btn-ghost btn-lg">View Buying Guide</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num">48+</div>
+              <div class="hero-stat-label">Racket models</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">12k</div>
+              <div class="hero-stat-label">Happy players</div>
+            </div>
+            <div>
+              <div class="hero-stat-num">30</div>
+              <div class="hero-stat-label">Day guarantee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED RACKETS -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-header center text-center fade-up">
+        <div class="eyebrow">Featured rackets</div>
+        <h2>Handpicked for 2026</h2>
+        <p>From tour-level control to beginner-friendly power — find your match.</p>
+      </div>
+      <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-sm-6 col-lg-3 fade-up">
+          <div class="product-card h-100">
+            <div class="product-card-img">🎾</div>
+            <div class="product-card-body">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="product-card-name">Pro X Blade</span>
+                <span class="badge badge-teal">Pro</span>
+              </div>
+              <div class="stars mb-1">★★★★★</div>
+              <div class="product-card-price">$149.99</div>
+              <div class="product-card-specs">
+                <span class="spec-pill">300g</span>
+                <span class="spec-pill">16×19</span>
+                <span class="spec-pill">Head 100</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn btn-primary add-to-cart-btn">Add to cart</button>
+                <a href="rackets.html" class="btn btn-outline">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 — Featured -->
+        <div class="col-sm-6 col-lg-3 fade-up">
+          <div class="product-card featured h-100" style="position:relative;">
+            <div class="product-card-badge">
+              <span class="badge badge-dark">&#11088; Best seller</span>
+            </div>
+            <div class="product-card-img" style="background:linear-gradient(135deg,#1D9E75,#085041);">
+              <span style="font-size:60px;">🎾</span>
+            </div>
+            <div class="product-card-body">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="product-card-name">Elite 500</span>
+                <span class="badge badge-teal">Pro</span>
+              </div>
+              <div class="stars mb-1">★★★★★</div>
+              <div class="product-card-price">$229.99</div>
+              <div class="product-card-specs">
+                <span class="spec-pill">285g</span>
+                <span class="spec-pill">18×20</span>
+                <span class="spec-pill">Head 98</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn btn-primary add-to-cart-btn">Add to cart</button>
+                <a href="rackets.html" class="btn btn-outline">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-6 col-lg-3 fade-up">
+          <div class="product-card h-100">
+            <div class="product-card-img">🎾</div>
+            <div class="product-card-body">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="product-card-name">Speed Blade</span>
+                <span class="badge badge-amber">Mid</span>
+              </div>
+              <div class="stars mb-1">★★★★☆</div>
+              <div class="product-card-price">$189.00</div>
+              <div class="product-card-specs">
+                <span class="spec-pill">295g</span>
+                <span class="spec-pill">16×19</span>
+                <span class="spec-pill">Head 102</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn btn-primary add-to-cart-btn">Add to cart</button>
+                <a href="rackets.html" class="btn btn-outline">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-sm-6 col-lg-3 fade-up">
+          <div class="product-card h-100">
+            <div class="product-card-img">🎾</div>
+            <div class="product-card-body">
+              <div class="d-flex align-items-center justify-content-between mb-1">
+                <span class="product-card-name">Club Junior</span>
+                <span class="badge" style="background:#E6F1FB;color:#0C447C;">Beginner</span>
+              </div>
+              <div class="stars mb-1">★★★★☆</div>
+              <div class="product-card-price">$89.99</div>
+              <div class="product-card-specs">
+                <span class="spec-pill">255g</span>
+                <span class="spec-pill">16×18</span>
+                <span class="spec-pill">Head 105</span>
+              </div>
+              <div class="product-card-actions">
+                <button class="btn btn-primary add-to-cart-btn">Add to cart</button>
+                <a href="rackets.html" class="btn btn-outline">View</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="text-center mt-5 fade-up">
+        <a href="rackets.html" class="btn btn-dark btn-lg">Browse all rackets &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ACE GEAR -->
+  <section class="section-pad why-bg">
+    <div class="container">
+      <div class="section-header center text-center fade-up">
+        <div class="eyebrow">Why ACE Gear</div>
+        <h2>Built different. Proven on court.</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon">&#11042;</div>
+            <h4>Pro-grade materials</h4>
+            <p>High-modulus graphite frames individually tested to tour standards. Built to last, engineered to perform.</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon">&#9654;</div>
+            <h4>Precision engineering</h4>
+            <p>Every string pattern and balance point is tuned for optimal power transfer and control at all skill levels.</p>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="feature-card">
+            <div class="feature-icon">&#10022;</div>
+            <h4>30-day guarantee</h4>
+            <p>Not playing better? Return it within 30 days — no questions asked. We back every frame we sell.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-pad testimonials-bg">
+    <div class="container">
+      <div class="section-header center text-center fade-up">
+        <div class="eyebrow" style="color:var(--teal-light);">Testimonials</div>
+        <h2 style="color:var(--cream);">What players say</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 fade-up">
+          <div class="testimonial-card">
+            <div class="stars mb-3">★★★★★</div>
+            <p class="testimonial-quote">"The Elite 500 completely transformed my baseline game. More power, less arm fatigue. I won't play with anything else."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JM</div>
+              <div>
+                <div class="author-name">Jordan M.</div>
+                <div class="author-title">Club player · 4.5 NTRP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="testimonial-card">
+            <div class="stars mb-3">★★★★★</div>
+            <p class="testimonial-quote">"Switched to the Pro X Blade after 10 years on a different brand. The difference in control is night and day."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SA</div>
+              <div>
+                <div class="author-name">Sara A.</div>
+                <div class="author-title">Tournament player · 5.0 NTRP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 fade-up">
+          <div class="testimonial-card">
+            <div class="stars mb-3">★★★★☆</div>
+            <p class="testimonial-quote">"My son started with the Club Junior — the lightweight frame helped him develop great swing mechanics from day one."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">TK</div>
+              <div>
+                <div class="author-name">Thabo K.</div>
+                <div class="author-title">Parent · Beginner player</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section-pad-sm" style="background:var(--teal);">
+    <div class="container text-center fade-up">
+      <h2 style="color:var(--white);font-size:clamp(24px,4vw,36px);margin-bottom:10px;">Not sure which racket is right for you?</h2>
+      <p style="color:rgba(255,255,255,0.8);margin-bottom:24px;">Use our interactive compare tool or read the buying guide.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="compare.html" class="btn btn-dark btn-lg">Compare Rackets</a>
+        <a href="guide.html" class="btn btn-ghost btn-lg">Read the Guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">ACE GEAR</div>
+          <p class="footer-desc">Premium tennis equipment for players who refuse to settle. Tested on court, trusted by thousands.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="footer-heading">Shop</div>
+          <ul class="footer-links">
+            <li><a href="rackets.html">All Rackets</a></li>
+            <li><a href="#">Strings</a></li>
+            <li><a href="#">Bags</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Apparel</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="footer-heading">Help</div>
+          <ul class="footer-links">
+            <li><a href="guide.html">Buying Guide</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Sizing Guide</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="footer-heading">Company</div>
+          <ul class="footer-links">
+            <li><a href="#">About ACE</a></li>
+            <li><a href="#">Sponsorships</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <div class="footer-heading">Follow</div>
+          <ul class="footer-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter / X</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 ACE Gear. All rights reserved.</span>
+        <div class="d-flex gap-3">
+          <a href="#" style="color:var(--mid);">Privacy</a>
+          <a href="#" style="color:var(--mid);">Terms</a>
+          <a href="#" style="color:var(--mid);">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
