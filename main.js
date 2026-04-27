@@ -136,22 +136,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const recommendCard  = document.getElementById('recommendCard');
 
   const RACKETS = [
-    { id:1, name:'Elite 500 Series',  price:'$229.99', level:'Professional', emoji:'🎾',
+    { id:1, name:'Elite 500 Series',  price:'P2290.99', level:'Professional', emoji:'🎾',
       specs:{ Weight:'285g', Pattern:'18×20', Head:'98 sq in', Material:'HM Graphite', Balance:'Head light', Power:'7/10', Control:'9/10' },
       rating:5 },
-    { id:2, name:'Pro X Blade',        price:'$149.99', level:'Professional', emoji:'🎾',
+    { id:2, name:'Pro X Blade',        price:'P1490.99', level:'Professional', emoji:'🎾',
       specs:{ Weight:'300g', Pattern:'16×19', Head:'100 sq in', Material:'Graphite',    Balance:'Even',       Power:'8.5/10', Control:'7.5/10' },
       rating:5 },
-    { id:3, name:'Speed Blade Pro',    price:'$189.00', level:'Intermediate', emoji:'🎾',
+    { id:3, name:'Speed Blade Pro',    price:'P1890.00', level:'Intermediate', emoji:'🎾',
       specs:{ Weight:'295g', Pattern:'16×19', Head:'102 sq in', Material:'HM Graphite', Balance:'Even',       Power:'8/10',   Control:'8/10'   },
       rating:4 },
-    { id:4, name:'Ace Club Junior',    price:'$89.99',  level:'Beginner',     emoji:'🎾',
+    { id:4, name:'Ace Club Junior',    price:'P890.99',  level:'Beginner',     emoji:'🎾',
       specs:{ Weight:'255g', Pattern:'16×18', Head:'105 sq in', Material:'Graphite',    Balance:'Head heavy', Power:'7.5/10', Control:'6/10'   },
       rating:4 },
-    { id:5, name:'Control Master',     price:'$175.00', level:'Intermediate', emoji:'🎾',
+    { id:5, name:'Control Master',     price:'P1750.00', level:'Intermediate', emoji:'🎾',
       specs:{ Weight:'290g', Pattern:'18×19', Head:'100 sq in', Material:'Graphite',    Balance:'Head light', Power:'7/10',   Control:'8.5/10' },
       rating:4 },
-    { id:6, name:'Ace Starter',        price:'$69.99',  level:'Beginner',     emoji:'🎾',
+    { id:6, name:'Ace Starter',        price:'P690.99',  level:'Beginner',     emoji:'🎾',
       specs:{ Weight:'260g', Pattern:'16×18', Head:'107 sq in', Material:'Aluminium',   Balance:'Head heavy', Power:'6/10',   Control:'5/10'   },
       rating:3 },
   ];
