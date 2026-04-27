@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — ACE Gear</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">ACE<span> GEAR</span></a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="rackets.html">Rackets</a>
+        <a class="nav-link" href="compare.html">Compare</a>
+        <a class="nav-link" href="guide.html">Guide</a>
+        <a class="nav-link active" href="contact.html">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="nav-icon-btn">&#128269;</button>
+        <button class="nav-icon-btn cart-badge">&#128722;</button>
+        <button class="nav-icon-btn">&#128100;</button>
+        <button class="navbar-toggler">&#9776;</button>
+      </div>
+    </div>
+    <div class="navbar-collapse">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="rackets.html">Rackets</a>
+      <a class="nav-link" href="compare.html">Compare</a>
+      <a class="nav-link" href="guide.html">Guide</a>
+      <a class="nav-link active" href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow" style="color:var(--teal-light);font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Get in touch</div>
+      <h1>Contact &amp; Feedback</h1>
+      <p style="color:var(--silver);margin-top:8px;">We typically reply within one business day. We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <div class="breadcrumb-bar">
+    <div class="container"><a href="index.html">Home</a><span>›</span><span style="color:var(--charcoal);">Contact</span></div>
+  </div>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- CONTACT FORM -->
+        <div class="col-lg-7">
+          <div class="card" id="formCard">
+            <h3 style="font-family:var(--font-display);font-size:22px;color:var(--charcoal);margin-bottom:6px;">Send us a message</h3>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:24px;">Fill in the form below and we'll get back to you as soon as possible.</p>
+
+            <form id="contactForm" novalidate>
+              <!-- Name & Email -->
+              <div class="row g-3 mb-1">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label" for="firstName">First Name <span style="color:var(--red);">*</span></label>
+                    <input type="text" id="firstName" name="firstName" class="form-control" placeholder="e.g. Jordan" required minlength="2">
+                    <div class="invalid-feedback">Please enter your first name (min. 2 characters).</div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="form-label" for="lastName">Last Name <span style="color:var(--red);">*</span></label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="e.g. Mosimanegape" required minlength="2">
+                    <div class="invalid-feedback">Please enter your last name (min. 2 characters).</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address <span style="color:var(--red);">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="jordan@example.com" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+267 7x xxx xxxx" pattern="[\+]?[0-9\s\-]{7,15}">
+                <div class="invalid-feedback">Please enter a valid phone number.</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="subject">Subject <span style="color:var(--red);">*</span></label>
+                <select id="subject" name="subject" class="form-control" required>
+                  <option value="">— Select a topic —</option>
+                  <option value="product">Product enquiry</option>
+                  <option value="order">Order &amp; delivery</option>
+                  <option value="return">Return / refund</option>
+                  <option value="warranty">Warranty claim</option>
+                  <option value="feedback">General feedback</option>
+                  <option value="other">Other</option>
+                </select>
+                <div class="invalid-feedback">Please select a subject.</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="playerLevel">Your player level</label>
+                <div class="d-flex gap-3 flex-wrap mt-1">
+                  <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;">
+                    <input type="radio" name="playerLevel" value="beginner" style="accent-color:var(--teal);"> Beginner
+                  </label>
+                  <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;">
+                    <input type="radio" name="playerLevel" value="intermediate" style="accent-color:var(--teal);"> Intermediate
+                  </label>
+                  <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;">
+                    <input type="radio" name="playerLevel" value="professional" style="accent-color:var(--teal);"> Professional
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Message <span style="color:var(--red);">*</span></label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell us how we can help…" required minlength="20" style="min-height:130px;"></textarea>
+                <div class="invalid-feedback">Please enter a message (min. 20 characters).</div>
+                <div style="font-size:11px;color:var(--muted);margin-top:4px;" id="charCount">0 / 20 minimum characters</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">How did you hear about us?</label>
+                <div class="row g-2 mt-1">
+                  <div class="col-6"><label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;"><input type="checkbox" name="source" value="social" style="accent-color:var(--teal);"> Social media</label></div>
+                  <div class="col-6"><label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;"><input type="checkbox" name="source" value="friend" style="accent-color:var(--teal);"> Friend / colleague</label></div>
+                  <div class="col-6"><label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;"><input type="checkbox" name="source" value="search" style="accent-color:var(--teal);"> Search engine</label></div>
+                  <div class="col-6"><label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--charcoal-3);cursor:pointer;"><input type="checkbox" name="source" value="other" style="accent-color:var(--teal);"> Other</label></div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label style="display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--charcoal-3);cursor:pointer;">
+                  <input type="checkbox" id="agree" name="agree" required style="accent-color:var(--teal);margin-top:2px;">
+                  <span>I agree to the <a href="#" style="color:var(--teal);">Privacy Policy</a> and consent to ACE Gear processing my enquiry. <span style="color:var(--red);">*</span></span>
+                </label>
+                <div class="invalid-feedback" style="display:none;" id="agreeError">You must agree before submitting.</div>
+              </div>
+
+              <div style="margin-top:24px;">
+                <button type="submit" class="btn btn-primary btn-lg" style="min-width:180px;">
+                  Send Message &#8594;
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- THANK YOU STATE -->
+          <div class="card thankyou-card" id="thankyouCard">
+            <div class="ty-icon">&#10003;</div>
+            <div class="ty-title">Message sent!</div>
+            <p class="ty-text">Thank you for reaching out. Our team will get back to you within one business day.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+              <a href="index.html" class="btn btn-primary">Back to Home</a>
+              <a href="rackets.html" class="btn btn-outline">Browse Rackets</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT INFO SIDEBAR -->
+        <div class="col-lg-5">
+          <div class="card mb-4">
+            <h4 style="font-family:var(--font-display);font-size:18px;color:var(--charcoal);margin-bottom:16px;">Contact Details</h4>
+            <div class="contact-info-item">
+              <div class="ci-icon">@</div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);margin-bottom:1px;">Email</div>
+                <span>support@acegear.com</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">&#9990;</div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);margin-bottom:1px;">Phone</div>
+                <span>+267 390 1234</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="ci-icon">&#10070;</div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);margin-bottom:1px;">Address</div>
+                <span>Plot 54360, Gaborone, Botswana</span>
+              </div>
+            </div>
+            <div class="contact-info-item" style="border:none;">
+              <div class="ci-icon">&#128205;</div>
+              <div>
+                <div style="font-size:11px;color:var(--muted);margin-bottom:1px;">Social</div>
+                <div class="d-flex gap-3 mt-1">
+                  <a href="#" style="font-size:12px;color:var(--teal);">Instagram</a>
+                  <a href="#" style="font-size:12px;color:var(--teal);">Twitter/X</a>
+                  <a href="#" style="font-size:12px;color:var(--teal);">YouTube</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-4">
+            <h4 style="font-family:var(--font-display);font-size:18px;color:var(--charcoal);margin-bottom:16px;">Business Hours</h4>
+            <div class="hours-row"><span class="hours-day">Monday – Friday</span><span class="hours-time">8:00am – 6:00pm SAST</span></div>
+            <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">9:00am – 1:00pm SAST</span></div>
+            <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time" style="color:var(--red);">Closed</span></div>
+            <div class="hours-row"><span class="hours-day">Public Holidays</span><span class="hours-time" style="color:var(--red);">Closed</span></div>
+          </div>
+
+          <div style="background:var(--teal-bg);border-radius:var(--radius-lg);padding:20px;text-align:center;">
+            <div style="font-size:28px;margin-bottom:8px;">💬</div>
+            <div style="font-family:var(--font-display);font-size:16px;font-weight:600;color:var(--teal-xdark);margin-bottom:4px;">Live Chat Available</div>
+            <p style="font-size:13px;color:var(--teal-dark);margin-bottom:14px;">Monday – Friday, 9am – 5pm SAST. Average response: under 3 minutes.</p>
+            <button class="btn btn-primary btn-block" onclick="alert('Live chat would open here in production.')">Start Live Chat</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6"><div class="footer-brand">ACE GEAR</div><p class="footer-desc">Premium tennis equipment for players who refuse to settle.</p></div>
+        <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Shop</div><ul class="footer-links"><li><a href="rackets.html">All Rackets</a></li><li><a href="#">Strings</a></li></ul></div>
+        <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Help</div><ul class="footer-links"><li><a href="guide.html">Buying Guide</a></li><li><a href="compare.html">Compare</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Follow</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 ACE Gear. All rights reserved.</span><div class="d-flex gap-3"><a href="#" style="color:var(--mid);">Privacy</a><a href="#" style="color:var(--mid);">Terms</a></div></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    /* Character counter */
+    const msg = document.getElementById('message');
+    const charCount = document.getElementById('charCount');
+    if(msg) msg.addEventListener('input', () => {
+      const len = msg.value.length;
+      charCount.textContent = `${len} / 20 minimum characters`;
+      charCount.style.color = len >= 20 ? 'var(--teal)' : 'var(--muted)';
+    });
+
+    /* Form validation */
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('[required]').forEach(field => {
+        if(!field.checkValidity()) {
+          field.classList.add('is-invalid');
+          valid = false;
+        } else {
+          field.classList.remove('is-invalid');
+          field.classList.add('is-valid');
+        }
+      });
+      const agree = document.getElementById('agree');
+      if(!agree.checked) {
+        document.getElementById('agreeError').style.display='block';
+        valid = false;
+      } else {
+        document.getElementById('agreeError').style.display='none';
+      }
+      if(valid) {
+        document.getElementById('formCard').style.display='none';
+        document.getElementById('thankyouCard').style.display='block';
+        window.scrollTo({top:0,behavior:'smooth'});
+      }
+    });
+
+    /* Real-time validation */
+    form.querySelectorAll('input, select, textarea').forEach(field => {
+      field.addEventListener('blur', () => {
+        if(field.hasAttribute('required')) {
+          if(!field.checkValidity()) { field.classList.add('is-invalid'); field.classList.remove('is-valid'); }
+          else { field.classList.remove('is-invalid'); field.classList.add('is-valid'); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
