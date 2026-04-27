@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Rackets — ACE Gear</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">ACE<span> GEAR</span></a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="rackets.html">Rackets</a>
+        <a class="nav-link active" href="compare.html">Compare</a>
+        <a class="nav-link" href="guide.html">Guide</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="nav-icon-btn">&#128269;</button>
+        <button class="nav-icon-btn cart-badge">&#128722;</button>
+        <button class="nav-icon-btn">&#128100;</button>
+        <button class="navbar-toggler">&#9776;</button>
+      </div>
+    </div>
+    <div class="navbar-collapse">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="rackets.html">Rackets</a>
+      <a class="nav-link active" href="compare.html">Compare</a>
+      <a class="nav-link" href="guide.html">Guide</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container text-center">
+      <div class="eyebrow" style="color:var(--teal-light);font-family:var(--font-display);font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Side-by-side</div>
+      <h1>Compare Rackets</h1>
+      <p style="color:var(--silver);margin-top:8px;max-width:500px;margin-left:auto;margin-right:auto;">Select up to 3 rackets to compare specs, performance ratings, and find your best match.</p>
+    </div>
+  </section>
+
+  <div class="breadcrumb-bar">
+    <div class="container"><a href="index.html">Home</a><span>›</span><span style="color:var(--charcoal);">Compare</span></div>
+  </div>
+
+  <section class="section-pad">
+    <div class="container">
+
+      <!-- SELECT SLOTS -->
+      <div class="row g-3 mb-4">
+        <div class="col-md-4">
+          <div class="compare-slot" id="slot0" onclick="openModal(0)">
+            <div class="compare-slot-plus">+</div>
+            <div class="compare-slot-text">Add Racket 1</div>
+            <small style="color:var(--teal-dark);">Select from catalogue</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="compare-slot" id="slot1" onclick="openModal(1)">
+            <div class="compare-slot-plus">+</div>
+            <div class="compare-slot-text">Add Racket 2</div>
+            <small style="color:var(--teal-dark);">Select from catalogue</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="compare-slot" id="slot2" onclick="openModal(2)">
+            <div class="compare-slot-plus">+</div>
+            <div class="compare-slot-text">Add Racket 3</div>
+            <small style="color:var(--teal-dark);">Select from catalogue</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMPARE TABLE -->
+      <div id="compareSection" style="display:none;">
+        <h4 style="font-family:var(--font-display);font-size:20px;color:var(--charcoal);margin-bottom:16px;">Specification Breakdown</h4>
+        <div class="table-responsive mb-4">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="text-align:left;width:160px;">Attribute</th>
+                <th id="th0">—</th>
+                <th id="th1">—</th>
+                <th id="th2">—</th>
+              </tr>
+            </thead>
+            <tbody id="compareBody"></tbody>
+          </table>
+        </div>
+
+        <!-- RECOMMENDATION -->
+        <div class="recommend-card" id="recommendCard" style="display:none;">
+          <div class="recommend-icon">&#11088;</div>
+          <div style="flex:1;">
+            <div class="recommend-label">Best match for you</div>
+            <div class="recommend-name" id="recName">Elite 500 Series</div>
+            <div class="recommend-desc" id="recDesc">Best overall balance of power, control and value based on your selection.</div>
+          </div>
+          <a href="rackets.html" class="btn btn-primary">Buy Now &#8594;</a>
+        </div>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyState" class="text-center py-5">
+        <div style="font-size:64px;margin-bottom:16px;">⚖️</div>
+        <h3 style="font-family:var(--font-display);color:var(--charcoal);margin-bottom:8px;">Select rackets above to compare</h3>
+        <p style="color:var(--muted);margin-bottom:24px;">Choose at least 2 rackets to see a full side-by-side breakdown.</p>
+        <a href="rackets.html" class="btn btn-primary">Browse Rackets</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="compareModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:2000;align-items:center;justify-content:center;">
+    <div style="background:var(--white);border-radius:var(--radius-lg);padding:28px;max-width:480px;width:90%;max-height:80vh;overflow-y:auto;">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <h5 style="font-family:var(--font-display);font-size:18px;color:var(--charcoal);margin:0;">Select a Racket</h5>
+        <button id="compareModalClose" style="background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;">✕</button>
+      </div>
+      <input type="text" id="compareSearch" class="form-control mb-3" placeholder="Search rackets…" style="border:1px solid var(--light);padding:8px 12px;border-radius:var(--radius-sm);width:100%;font-size:13px;">
+      <div class="list-group" id="compareList"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6"><div class="footer-brand">ACE GEAR</div><p class="footer-desc">Premium tennis equipment for players who refuse to settle.</p></div>
+        <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Shop</div><ul class="footer-links"><li><a href="rackets.html">All Rackets</a></li><li><a href="#">Strings</a></li></ul></div>
+        <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Help</div><ul class="footer-links"><li><a href="guide.html">Buying Guide</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="col-lg-2 col-md-3 col-6"><div class="footer-heading">Follow</div><ul class="footer-links"><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 ACE Gear. All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    const RACKETS = [
+      { name:'Elite 500 Series', price:'$229.99', emoji:'🎾', specs:{ Weight:'285g', Pattern:'18×20', 'Head Size':'98 sq in', Material:'HM Graphite', Balance:'Head-light', 'Power (1-10)':'7/10', 'Control (1-10)':'9/10', Price:'$229.99' }},
+      { name:'Pro X Blade', price:'$149.99', emoji:'🎾', specs:{ Weight:'300g', Pattern:'16×19', 'Head Size':'100 sq in', Material:'Graphite', Balance:'Even', 'Power (1-10)':'8.5/10', 'Control (1-10)':'7.5/10', Price:'$149.99' }},
+      { name:'Speed Blade Pro', price:'$189.00', emoji:'🎾', specs:{ Weight:'295g', Pattern:'16×19', 'Head Size':'102 sq in', Material:'HM Graphite', Balance:'Even', 'Power (1-10)':'8/10', 'Control (1-10)':'8/10', Price:'$189.00' }},
+      { name:'Ace Club Junior', price:'$89.99', emoji:'🎾', specs:{ Weight:'255g', Pattern:'16×18', 'Head Size':'105 sq in', Material:'Graphite', Balance:'Head-heavy', 'Power (1-10)':'7.5/10', 'Control (1-10)':'6/10', Price:'$89.99' }},
+      { name:'Ace Starter', price:'$69.99', emoji:'🎾', specs:{ Weight:'260g', Pattern:'16×18', 'Head Size':'108 sq in', Material:'Graphite', Balance:'Head-heavy', 'Power (1-10)':'6.5/10', 'Control (1-10)':'5.5/10', Price:'$69.99' }},
+      { name:'Control Master', price:'$175.00', emoji:'🎾', specs:{ Weight:'290g', Pattern:'18×19', 'Head Size':'100 sq in', Material:'Graphite', Balance:'Head-light', 'Power (1-10)':'7/10', 'Control (1-10)':'8.5/10', Price:'$175.00' }},
+    ];
+    let selected = [null, null, null];
+    let activeSlot = null;
+
+    function openModal(i) { activeSlot = i; buildList(''); document.getElementById('compareModal').style.display='flex'; }
+    document.getElementById('compareModalClose').onclick = () => document.getElementById('compareModal').style.display='none';
+    document.getElementById('compareModal').onclick = e => { if(e.target===document.getElementById('compareModal')) document.getElementById('compareModal').style.display='none'; };
+    document.getElementById('compareSearch').oninput = e => buildList(e.target.value);
+
+    function buildList(q) {
+      const list = document.getElementById('compareList');
+      list.innerHTML = '';
+      RACKETS.filter(r=>r.name.toLowerCase().includes(q.toLowerCase())).forEach(r => {
+        const btn = document.createElement('button');
+        btn.className = 'list-group-item list-group-item-action d-flex align-items-center gap-3';
+        btn.style.cssText='font-size:13px;padding:10px 14px;border:none;border-bottom:1px solid var(--light);';
+        btn.innerHTML=`<span style="font-size:20px;">${r.emoji}</span><span style="flex:1;">${r.name}</span><span style="color:var(--teal);font-weight:500;">${r.price}</span>`;
+        btn.onclick = () => { selected[activeSlot]=r; renderSlots(); renderTable(); document.getElementById('compareModal').style.display='none'; };
+        list.appendChild(btn);
+      });
+    }
+
+    function renderSlots() {
+      [0,1,2].forEach(i => {
+        const slot = document.getElementById('slot'+i);
+        const r = selected[i];
+        if(r) {
+          slot.style.cssText='border:2px solid var(--teal);background:var(--white);border-radius:var(--radius-lg);padding:16px;cursor:default;display:flex;';
+          slot.innerHTML=`<div class="d-flex align-items-center gap-3 w-100"><span style="font-size:28px;">${r.emoji}</span><div style="flex:1;"><div style="font-size:13px;font-weight:500;color:var(--charcoal);">${r.name}</div><div style="font-size:15px;color:var(--teal);font-weight:500;">${r.price}</div></div><button onclick="clearSlot(${i},event)" style="background:none;border:1px solid var(--red);color:var(--red);padding:3px 10px;border-radius:4px;font-size:11px;cursor:pointer;">Remove</button></div>`;
+          slot.onclick = null;
+        } else {
+          slot.className='compare-slot';
+          slot.style.cssText='';
+          slot.innerHTML=`<div class="compare-slot-plus">+</div><div class="compare-slot-text">Add Racket ${i+1}</div><small style="color:var(--teal-dark);">Select from catalogue</small>`;
+          slot.onclick = () => openModal(i);
+        }
+      });
+    }
+
+    function clearSlot(i, e) {
+      e.stopPropagation(); selected[i]=null; renderSlots(); renderTable();
+    }
+
+    function renderTable() {
+      const filled = selected.filter(Boolean);
+      const section = document.getElementById('compareSection');
+      const empty = document.getElementById('emptyState');
+      const rec = document.getElementById('recommendCard');
+      if(filled.length < 2) { section.style.display='none'; empty.style.display='block'; return; }
+      section.style.display='block'; empty.style.display='none';
+      const attrs = ['Weight','Pattern','Head Size','Material','Balance','Power (1-10)','Control (1-10)','Price'];
+      [0,1,2].forEach(i => {
+        document.getElementById('th'+i).textContent = selected[i]?selected[i].name:'—';
+      });
+      const tbody = document.getElementById('compareBody');
+      tbody.innerHTML='';
+      attrs.forEach(attr => {
+        const tr = document.createElement('tr');
+        let cells=`<td>${attr}</td>`;
+        selected.forEach(r => { cells+=`<td>${r?r.specs[attr]:'—'}</td>`; });
+        tr.innerHTML=cells; tbody.appendChild(tr);
+      });
+      rec.style.display='flex';
+      document.getElementById('recName').textContent = filled[0].name;
+    }
+  </script>
+</body>
+</html>
