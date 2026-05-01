@@ -10,7 +10,7 @@
 <body>
   <nav class="navbar">
     <div class="container">
-     <a class="navbar-brand" href="index.html"><img src="logo.png" alt="ACE Gear logo" width="300" style="object-fit:contain;"></a>
+     <a class="navbar-brand" href="index.html"><img src="logo.png" alt="ACE Gear logo" width="350" style="object-fit:contain;"></a>
       <div class="nav-main" role="menubar">
       <div class="navbar-nav">
         <a class="nav-link" href="index.html">Home</a>
@@ -165,7 +165,7 @@
         const btn = document.createElement('button');
         btn.className = 'list-group-item list-group-item-action d-flex align-items-center gap-3';
         btn.style.cssText='font-size:13px;padding:10px 14px;border:none;border-bottom:1px solid var(--light);';
-        btn.innerHTML=`<span style="font-size:20px;">${r.emoji}</span><span style="flex:1;">${r.name}</span><span style="color:var(--teal);font-weight:500;">${r.price}</span>`;
+        btn.innerHTML=`<span style="font-size:20px;">P{r.emoji}</span><span style="flex:1;">P{r.name}</span><span style="color:var(--teal);font-weight:500;">P{r.price}</span>`;
         btn.onclick = () => { selected[activeSlot]=r; renderSlots(); renderTable(); document.getElementById('compareModal').style.display='none'; };
         list.appendChild(btn);
       });
@@ -177,12 +177,12 @@
         const r = selected[i];
         if(r) {
           slot.style.cssText='border:2px solid var(--teal);background:var(--white);border-radius:var(--radius-lg);padding:16px;cursor:default;display:flex;';
-          slot.innerHTML=`<div class="d-flex align-items-center gap-3 w-100"><span style="font-size:28px;">${r.emoji}</span><div style="flex:1;"><div style="font-size:13px;font-weight:500;color:var(--charcoal);">${r.name}</div><div style="font-size:15px;color:var(--teal);font-weight:500;">${r.price}</div></div><button onclick="clearSlot(${i},event)" style="background:none;border:1px solid var(--red);color:var(--red);padding:3px 10px;border-radius:4px;font-size:11px;cursor:pointer;">Remove</button></div>`;
+          slot.innerHTML=`<div class="d-flex align-items-center gap-3 w-100"><span style="font-size:28px;">P{r.emoji}</span><div style="flex:1;"><div style="font-size:13px;font-weight:500;color:var(--charcoal);">${r.name}</div><div style="font-size:15px;color:var(--teal);font-weight:500;">${r.price}</div></div><button onclick="clearSlot(${i},event)" style="background:none;border:1px solid var(--red);color:var(--red);padding:3px 10px;border-radius:4px;font-size:11px;cursor:pointer;">Remove</button></div>`;
           slot.onclick = null;
         } else {
           slot.className='compare-slot';
           slot.style.cssText='';
-          slot.innerHTML=`<div class="compare-slot-plus">+</div><div class="compare-slot-text">Add Racket ${i+1}</div><small style="color:var(--teal-dark);">Select from catalogue</small>`;
+          slot.innerHTML=`<div class="compare-slot-plus">+</div><div class="compare-slot-text">Add Racket P{i+1}</div><small style="color:var(--teal-dark);">Select from catalogue</small>`;
           slot.onclick = () => openModal(i);
         }
       });
@@ -207,7 +207,7 @@
       tbody.innerHTML='';
       attrs.forEach(attr => {
         const tr = document.createElement('tr');
-        let cells=`<td>${attr}</td>`;
+        let cells=`<td>P{attr}</td>`;
         selected.forEach(r => { cells+=`<td>${r?r.specs[attr]:'—'}</td>`; });
         tr.innerHTML=cells; tbody.appendChild(tr);
       });
